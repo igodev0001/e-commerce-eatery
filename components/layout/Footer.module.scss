@@ -1,0 +1,29 @@
+@use "../../styles/mixin";
+
+.container {
+}
+
+.wrapper {
+}
+
+.top {
+  ul {
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+  }
+}
+
+.bottom {
+  .social_media {
+    @include mixin.footer_flex;
+  }
+
+  .seperator {
+    padding-inline: 2rem;
+  }
+
+  .legal_terms {
+    @include mixin.footer_flex;
+  }
+}

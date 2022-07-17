@@ -3,3 +3,13 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin footer_flex {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4rem;
+  div {
+    display: flex;
+    gap: 2rem;
+  }
+}
