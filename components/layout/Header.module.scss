@@ -1,0 +1,40 @@
+@use "../../styles/mixin";
+
+.container {
+  height: 9rem;
+  padding-top: 15px;
+  @include mixin.flex_center;
+}
+
+.wrapper {
+  width: 80%;
+  display: flex;
+}
+
+.logo {
+  @include mixin.flex_center;
+  max-height: 100%;
+  width: 110px;
+  margin: 0 2rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 1rem;
+  flex: 2;
+
+  .nav_links {
+    display: flex;
+    justify-content: space-between;
+    div {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  .nav_menu {
+    display: flex;
+    gap: 3rem;
+  }
+}
