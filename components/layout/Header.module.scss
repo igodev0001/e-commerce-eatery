@@ -1,20 +1,22 @@
 @use "../../styles/mixin";
 
 .container {
-  height: 9rem;
-  padding-top: 15px;
+  height: 8rem;
+  // padding-top: 15px;
   @include mixin.flex_center;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.751);
+  box-shadow: 0 0 5px rgb(230, 230, 230, 0.751);
 }
 
 .wrapper {
-  width: 80%;
+  width: 75%;
   display: flex;
 }
 
 .logo {
   @include mixin.flex_center;
   max-height: 100%;
-  width: 110px;
+  width: 100px;
   margin: 0 2rem;
 }
 
@@ -28,13 +30,17 @@
     display: flex;
     justify-content: space-between;
     div {
-      display: flex;
-      gap: 2rem;
+      @include mixin.flex_center;
+      gap: 2.5rem;
     }
   }
 
   .nav_menu {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
   }
+}
+
+.actions {
+  padding-inline: 1rem;
 }

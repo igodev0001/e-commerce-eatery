@@ -1,14 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-import Logo from "../../public/images/McDonalds-Logo.png";
-
+//=============
 import styles from "./Header.module.scss";
+//=============
+import SearchBar from "../searchBar/SearchBar";
+import Button from "../Button/Button";
+import Logo from "../../public/images/McDonalds-Logo.png";
+import { MdOutlineLocationOn } from "react-icons/md";
 
-const { container, logo, nav, nav_links, nav_menu, wrapper } = styles;
+const { container, logo, nav, nav_links, nav_menu, wrapper, actions } = styles;
 
 export default function Header() {
+  function OrderHandler(): void {
+    console.log("hello");
+  }
+
   return (
     <div className={container}>
       <div className={wrapper}>
@@ -22,10 +29,9 @@ export default function Header() {
               <p>Sign up for email</p>
               <p>Careers</p>
             </div>
-            <div>
-              <input type="search" placeholder="search" />
-              <p>location</p>
-              <button>Order Now</button>
+            <div className={actions}>
+              <SearchBar />
+              <Button action={OrderHandler}>Order Now</Button>
             </div>
           </nav>
           <div className={nav_menu}>
