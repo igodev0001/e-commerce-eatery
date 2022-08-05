@@ -1,0 +1,29 @@
+@use "../../styles/mixin";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 1rem;
+  flex: 1;
+
+  .nav_links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    div {
+      @include mixin.flex_center;
+      gap: 2.5rem;
+    }
+  }
+
+  .nav_menu {
+    display: flex;
+    gap: 2.5rem;
+    font-size: 18px;
+    padding-right: 1rem;
+  }
+}
+
+.actions {
+  padding-inline: 1rem;
+}
