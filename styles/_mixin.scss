@@ -1,10 +1,10 @@
-@mixin flex_center {
+@mixin flex_center() {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin footer_flex {
+@mixin footer_flex() {
   display: flex;
   justify-content: space-between;
   padding-inline: 4rem;

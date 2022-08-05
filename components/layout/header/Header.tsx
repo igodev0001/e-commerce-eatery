@@ -4,9 +4,9 @@ import Link from "next/link";
 //=============
 import styles from "./Header.module.scss";
 //=============
-import SearchBar from "../searchBar/SearchBar";
-import Button from "../Button/Button";
-import Logo from "../../public/images/McDonalds-Logo.png";
+import SearchBar from "../../searchBar/SearchBar";
+import Button from "../../Button/Button";
+import Logo from "../../../public/images/McDonalds-Logo.png";
 import { MdOutlineLocationOn } from "react-icons/md";
 
 const { container, logo, nav, nav_links, nav_menu, wrapper, actions } = styles;
