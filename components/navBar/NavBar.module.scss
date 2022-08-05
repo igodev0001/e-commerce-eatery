@@ -5,6 +5,8 @@
   flex-direction: column;
   padding-inline: 1rem;
   flex: 1;
+  font-family: Speede;
+  color: rgb(41, 41, 41);
 
   .nav_links {
     display: flex;
@@ -18,7 +20,7 @@
 
   .nav_menu {
     display: flex;
-    gap: 2.5rem;
+    gap: 1.5rem;
     font-size: 18px;
     padding-right: 1rem;
   }
