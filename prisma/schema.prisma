@@ -11,3 +11,10 @@ model test {
   id Int @id @default(autoincrement())
   test String
 }
+
+model user {
+  id Int @id @default(autoincrement())
+  name String
+  jobTitle String
+
+}
