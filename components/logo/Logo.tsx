@@ -2,7 +2,7 @@ import Image from "next/image";
 //===========================================
 import LogoImage from "../../public/images/McDonalds-Logo.png";
 //===========================================
-import styles from "./Logo.module.scss";
+import styles from "../../styles/Logo.module.scss";
 //===========================================
 
 interface Props {

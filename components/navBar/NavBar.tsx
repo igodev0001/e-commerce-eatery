@@ -1,7 +1,8 @@
 import Button from "../button/Button";
 import SearchBar from "../searchBar/SearchBar";
 //===========================================
-import styles from "./NavBar.module.scss";
+import { MdExpandMore } from "react-icons/md";
+import styles from "../../styles/NavBar.module.scss";
 //===========================================
 
 export default function NavBar() {
@@ -13,7 +14,10 @@ export default function NavBar() {
     <div className={styles.container}>
       <nav className={styles.nav_links}>
         <div>
-          <p>Language</p>
+          <span>
+            <p>Language</p>
+            <MdExpandMore size={18} />
+          </span>
           <p>Sign up for email</p>
           <p>Careers</p>
         </div>
@@ -23,7 +27,10 @@ export default function NavBar() {
         </div>
       </nav>
       <nav className={styles.nav_menu}>
-        <p>Our Menu</p>
+        <span>
+          <p>Our Menu</p>
+          <MdExpandMore size={20} />
+        </span>
         <p>Download App</p>
         <p>MyMcDonald Rewards</p>
         <p>Exclusive Deals</p>

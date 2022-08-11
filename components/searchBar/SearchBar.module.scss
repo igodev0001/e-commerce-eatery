@@ -1,8 +1,0 @@
-@use "../../styles/mixin";
-
-.container {
-  @include mixin.flex_center;
-  input {
-    height: 2rem;
-  }
-}

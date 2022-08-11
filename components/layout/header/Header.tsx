@@ -1,7 +1,7 @@
 import Logo from "../../logo/Logo";
 import NavBar from "../../navBar/NavBar";
 //===========================================
-import styles from "./Header.module.scss";
+import styles from "../../../styles/Header.module.scss";
 //===========================================
 
 export default function Header() {

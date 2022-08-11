@@ -1,4 +1,4 @@
-@use "../../styles/mixin";
+@use "./mixin";
 
 .container {
   display: flex;
@@ -16,6 +16,9 @@
       @include mixin.flex_center;
       gap: 2.5rem;
     }
+    span {
+      @include mixin.flex_center;
+    }
   }
 
   .nav_menu {
@@ -23,6 +26,9 @@
     gap: 1.5rem;
     font-size: 18px;
     padding-right: 1rem;
+    span {
+      @include mixin.flex_center;
+    }
   }
 }
 

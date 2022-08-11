@@ -1,4 +1,4 @@
-@use "../../../styles/mixin";
+@use "./mixin";
 
 .container {
   @include mixin.flex_center;
@@ -12,5 +12,4 @@
   width: 70rem;
   height: 100%;
   display: flex;
-  background-color: red;
 }
