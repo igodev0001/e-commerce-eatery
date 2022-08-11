@@ -8,7 +8,7 @@ export default function SearchBar() {
 
   function visibleHandler() {
     setVisible(!visible);
-    searchRef.current?.focus();
+    !visible && searchRef.current?.focus();
   }
 
   const dynamicClass: string = visible ? "visible" : "hidden";

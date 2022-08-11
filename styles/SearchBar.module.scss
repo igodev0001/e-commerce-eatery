@@ -8,16 +8,17 @@
   input {
     height: 2rem;
     border: none;
-    transition: 1s;
+    transition: 1s width;
     &:focus {
       outline: none;
     }
   }
   .visible {
-    // display: block;
+    display: block;
     width: 130px;
   }
   .hidden {
+    visibility: hidden;
     width: 0px;
   }
 }

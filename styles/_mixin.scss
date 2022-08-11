@@ -1,5 +1,6 @@
 @mixin flex_center() {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -8,8 +9,11 @@
   display: flex;
   justify-content: space-between;
   padding-inline: 4rem;
-  div {
-    display: flex;
-    gap: 2rem;
-  }
+}
+
+@mixin flex_column() {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
