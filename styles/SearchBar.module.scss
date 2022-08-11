@@ -1,0 +1,22 @@
+@use "./mixin";
+
+.container {
+  @include mixin.flex_center;
+  span {
+    cursor: pointer;
+  }
+  input {
+    height: 2rem;
+    border: none;
+    transition: 1s width;
+    &:focus {
+      outline: none;
+    }
+  }
+  .visible {
+    width: 130px;
+  }
+  .hidden {
+    width: 0px;
+  }
+}

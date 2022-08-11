@@ -1,0 +1,15 @@
+@use "./mixin";
+
+.container {
+  @include mixin.flex_center;
+  height: 8rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.751);
+  box-shadow: 0 0 5px rgb(230, 230, 230, 0.751);
+}
+
+.wrapper {
+  width: 70rem;
+  height: 100%;
+  display: flex;
+}

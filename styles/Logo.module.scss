@@ -1,0 +1,19 @@
+@use "./mixin";
+
+.container {
+  @include mixin.flex_center;
+
+  margin: 0 3.2rem 0 0;
+}
+
+.largeSize {
+  width: 100px;
+}
+
+.mediumSize {
+  width: 70px;
+}
+
+.smallSize {
+  width: 30px;
+}

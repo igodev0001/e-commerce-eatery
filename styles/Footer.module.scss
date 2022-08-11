@@ -1,0 +1,76 @@
+@import "./mixin";
+
+.wrapper {
+  padding: 1rem;
+}
+.top {
+  @include footer_flex;
+  margin-bottom: 3rem;
+  ul {
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+  }
+  > div {
+    @include flex_column;
+    ul {
+      @include flex_column;
+      list-style: none;
+      gap: 0.8rem;
+      font-size: 14px;
+      max-width: 200px;
+    }
+  }
+}
+
+.bottom {
+  .social_media {
+    @include footer_flex;
+
+    .left {
+      @include flex_center;
+      gap: 1rem;
+
+      div {
+        @include flex_center;
+        width: 35px;
+        height: 35px;
+        border: 1px solid rgba(168, 166, 166, 0.702);
+        border-radius: 50%;
+        color: rgba(55, 55, 55, 0.922);
+      }
+    }
+
+    .right {
+      @include flex_center;
+      gap: 1.5rem;
+      div {
+        width: 130px;
+      }
+    }
+  }
+  .seperator {
+    padding-inline: 2rem;
+    margin-block: 2.5rem;
+  }
+
+  .legal_terms {
+    @include footer_flex;
+    margin-bottom: 1rem;
+    .terms {
+      @include flex_center;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2rem;
+      flex: 1;
+    }
+    .logo {
+      @include flex_center;
+      align-items: flex-start;
+    }
+    .rights {
+      max-width: 300px;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin flex_center() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin footer_flex() {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4rem;
+}
+
+@mixin flex_column() {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
