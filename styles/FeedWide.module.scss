@@ -1,0 +1,10 @@
+@use "./mixin";
+
+.container {
+  width: 100%;
+  @include mixin.flex_center;
+  .image {
+    width: 120%;
+    height: 300px;
+  }
+}

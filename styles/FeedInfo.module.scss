@@ -1,0 +1,9 @@
+@use "./mixin";
+
+.container {
+  @include mixin.flex_column;
+  p,
+  span {
+    text-align: left;
+  }
+}
