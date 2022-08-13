@@ -5,15 +5,25 @@ interface Props {
   title: string;
   desc: string;
   legal: string;
+  linkName: string;
+  href: string;
 }
 
-export default function FeedInfo({ title, desc, legal }: Props) {
+export default function FeedInfo({
+  title,
+  desc,
+  legal,
+  linkName,
+  href,
+}: Props) {
   return (
     <div className={styles.container}>
       <h2>{title}</h2>
-      <p>{desc}</p>
-      <span>{legal}</span>
-      <LinkButton href="dfdfs" name="sdfs" />
+      <div className={styles.desc}>
+        <p>{desc}</p>
+        <span>{legal}</span>
+      </div>
+      <LinkButton href={href} name={linkName} />
     </div>
   );
 }

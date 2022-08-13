@@ -1,6 +1,8 @@
+@use "./mixin";
 @import "./variables";
 
 .button {
+  @include mixin.flex_center;
   height: 2.5rem;
   background-color: $buttonColor;
   border: none;

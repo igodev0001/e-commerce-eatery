@@ -2,8 +2,20 @@
 
 .container {
   @include mixin.flex_column;
-  p,
-  span {
-    text-align: left;
+  flex: 1;
+  h2 {
+    font-size: 36px;
+    margin: 1rem 0 1rem;
+  }
+
+  .desc {
+    margin-bottom: 3rem;
+    p {
+      font-size: 16px;
+      margin: 0 0 1rem;
+    }
+    span {
+      font-size: 10px;
+    }
   }
 }

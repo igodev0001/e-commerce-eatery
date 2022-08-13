@@ -1,4 +1,4 @@
-import Button from "../button/Button";
+import Button from "../Button/Button";
 import SearchBar from "../searchBar/SearchBar";
 //===========================================
 import { MdExpandMore } from "react-icons/md";

@@ -6,6 +6,9 @@
 .top {
   @include footer_flex;
   margin-bottom: 3rem;
+  h4 {
+    margin: 0 0 1.5rem;
+  }
   ul {
     display: flex;
     padding: 0;
