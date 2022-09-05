@@ -7,14 +7,89 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model test {
-  id Int @id @default(autoincrement())
-  test String
-}
-
-model user {
+model Category {
   id Int @id @default(autoincrement())
   name String
-  jobTitle String
+  image String
+  products Product[]
+}
 
+model Product {
+  id Int @id @default(autoincrement())
+  name String
+  price Int
+  price_small Int
+  price_medium Int
+  price_big Int
+  image String
+  category Category @relation(fields: [category_id], references: [id])
+  category_id Int
+  ingredients Ingredient[]
+  carts Cart_Item[]
+  orders Order_Item[]
+}
+
+model Ingredient {
+  id Int @id @default(autoincrement())
+  name String
+  image String
+  products Product[]
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  createdAt DateTime @default(now())
+  address User_Address?
+  carts Cart[]
+  orders Order[]
+}
+
+model User_Address {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [user_id], references: [id])
+  user_id Int @unique
+  city String
+  street String
+  zipCode String
+  phone String
+}
+
+model Cart {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [user_id], references: [id])
+  user_id Int
+  status Status @default(Pending)
+  items Cart_Item[]
+}
+
+model Cart_Item {
+  id Int @id @default(autoincrement())
+  cart Cart @relation(fields: [cart_id], references: [id])
+  cart_id Int
+  product Product @relation(fields: [product_id], references: [id])
+  product_id Int
+  quantity Int
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [user_id], references: [id])
+  user_id Int
+  items Order_Item[]
+}
+
+model Order_Item {
+  id Int @id @default(autoincrement())
+  order Order @relation(fields: [order_id], references: [id])
+  order_id Int
+  product Product @relation(fields: [product_id], references: [id])
+  product_id Int
+  quantity Int
+}
+
+enum Status {
+  Pending
+  Done
 }

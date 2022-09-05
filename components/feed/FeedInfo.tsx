@@ -4,7 +4,7 @@ import LinkButton from "../Button/LinkButton";
 interface Props {
   title: string;
   desc: string;
-  legal: string;
+  legal?: string;
   linkName: string;
   href: string;
 }

@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import React from "react";
 import styles from "../../styles/FeedWide.module.scss";
 
@@ -7,10 +7,10 @@ import FeedInfo from "./FeedInfo";
 interface Props {
   title: string;
   desc: string;
-  legal: string;
+  legal?: string;
   linkName: string;
   href: string;
-  banner: StaticImageData;
+  banner: string;
 }
 
 export default function FeedWide({
@@ -24,7 +24,7 @@ export default function FeedWide({
   return (
     <section className={styles.container}>
       <div className={styles.image}>
-        <Image src={banner} alt="mccustom" layout="responsive" />
+        <Image src={banner} alt="mccustom" width="900px" height="400px" />
       </div>
       <FeedInfo
         title={title}
