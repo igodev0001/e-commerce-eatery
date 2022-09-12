@@ -8,7 +8,7 @@ interface Props {
 
 export default function LinkButton({ href, name }: Props) {
   return (
-    <div className={styles.button}>
+    <div className={styles.default}>
       <Link href={href}>{name}</Link>
     </div>
   );

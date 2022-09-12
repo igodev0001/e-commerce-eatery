@@ -1,7 +1,7 @@
 @use "./mixin";
 @import "./variables";
 
-.button {
+.default {
   @include mixin.flex_center;
   height: 2.5rem;
   background-color: $buttonColor;
@@ -13,4 +13,28 @@
     Helvetica Neue, Arial, Noto Sans, sans-serif;
   cursor: pointer;
   color: $fontColor;
+}
+
+.dropDown {
+  @include mixin.flex_center;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+
+  .arrow {
+    transition: 0.5s;
+  }
+
+  .arrowUp {
+    transform: rotate(180deg);
+  }
+}
+
+.bold {
+  font-size: 18px;
+}
+
+.normal {
+  font-size: 14px;
 }

@@ -10,7 +10,7 @@ interface ButtonProps {
 
 export default function Button({ children, action }: ButtonProps) {
   return (
-    <button onClick={action} className={styles.button}>
+    <button onClick={action} className={styles.default}>
       {children}
     </button>
   );

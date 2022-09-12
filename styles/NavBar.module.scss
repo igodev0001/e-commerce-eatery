@@ -23,12 +23,12 @@
   }
 
   .nav_menu {
-    display: flex;
-    gap: 1.5rem;
     font-size: 18px;
-    padding-right: 1rem;
-    span {
-      @include mixin.flex_center;
+    padding-right: 7rem;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
