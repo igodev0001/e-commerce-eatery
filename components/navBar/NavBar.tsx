@@ -4,6 +4,7 @@ import SearchBar from "../searchBar/SearchBar";
 //===========================================
 import styles from "../../styles/NavBar.module.scss";
 import { useState } from "react";
+import Modal from "../modal/Modal";
 //===========================================
 
 export default function NavBar() {
@@ -60,6 +61,9 @@ export default function NavBar() {
           <li>Locate</li>
         </ul>
       </nav>
+      <Modal st={isMenuOpen}>
+        <div>hi hi</div>
+      </Modal>
     </div>
   );
 }
