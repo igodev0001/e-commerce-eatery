@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
 import FeedWide from "../components/feed/FeedWide";
+import Modal from "../components/modal/Modal";
 
 const Home: NextPage = () => {
   return (
     <div>
+      <Modal />
       <FeedWide
         title="Let’s Celebrate Restaurant Crew and Managers"
         desc="Join us by sharing a story about your favorite experience with one of the crew members or managers.*"

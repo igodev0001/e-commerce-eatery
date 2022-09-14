@@ -11,6 +11,7 @@ export default function Layout({ children }: Props) {
   return (
     <Fragment>
       <Header />
+      <div id="modal-root"></div>
       <main style={{ padding: "4rem" }}>{children}</main>
       <Footer />
     </Fragment>
