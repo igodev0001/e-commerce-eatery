@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Layout from "../components/layout/Layout";
 import Head from "next/head";
 import { UiProvider } from "../context/ui-context";
+import MenuPopup from "../components/menu/MenuPopup";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <UiProvider>
         <Layout>
           <Component {...pageProps} />
+          <MenuPopup />
         </Layout>
       </UiProvider>
     </>

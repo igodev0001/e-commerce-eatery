@@ -1,5 +1,12 @@
-import React from "react";
+import Modal from "../modal/Modal";
+import { useUiContext } from "../../context/ui-context";
 
 export default function MenuPopup() {
-  return <div>MenuPopup</div>;
+  const { isMenuOpen } = useUiContext();
+
+  return (
+    <Modal st={isMenuOpen}>
+      <div>nima</div>
+    </Modal>
+  );
 }
