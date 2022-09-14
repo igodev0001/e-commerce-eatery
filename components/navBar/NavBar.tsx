@@ -5,17 +5,15 @@ import SearchBar from "../searchBar/SearchBar";
 import styles from "../../styles/NavBar.module.scss";
 import { useState } from "react";
 import Modal from "../modal/Modal";
+import { useUiContext } from "../../context/ui-context";
 //===========================================
 
 export default function NavBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isLangOpen, setIsLangOpen] = useState<boolean>(false);
+  const { isMenuOpen, menuHandler } = useUiContext();
 
+  const [isLangOpen, setIsLangOpen] = useState<boolean>(false);
   console.log(isMenuOpen);
 
-  function menuHandler(): void {
-    setIsMenuOpen(!isMenuOpen);
-  }
   function langHandler(): void {
     setIsLangOpen(!isLangOpen);
   }

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import FeedWide from "../components/feed/FeedWide";
+
 const Home: NextPage = () => {
   return (
     <div>

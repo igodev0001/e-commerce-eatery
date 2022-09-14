@@ -2,6 +2,7 @@ import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import Layout from "../components/layout/Layout";
 import Head from "next/head";
+import { UiProvider } from "../context/ui-context";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,9 +15,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <UiProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </UiProvider>
     </>
   );
 }

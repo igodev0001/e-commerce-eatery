@@ -1,6 +1,5 @@
 import Logo from "../logo/Logo";
 import NavBar from "../navBar/NavBar";
-import Modal from "../modal/Modal";
 //===========================================
 import styles from "../../styles/Header.module.scss";
 //===========================================
