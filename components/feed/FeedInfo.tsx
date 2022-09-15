@@ -23,7 +23,7 @@ export default function FeedInfo({
         <p>{desc}</p>
         <span>{legal}</span>
       </div>
-      <LinkButton href={href} name={linkName} />
+      <LinkButton href={href} name={linkName} style="yellow" />
     </div>
   );
 }

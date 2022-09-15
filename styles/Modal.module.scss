@@ -10,9 +10,12 @@
 // }
 
 .modal {
-  height: 500px;
-  width: 100%;
-  z-index: 10;
   position: absolute;
-  background-color: red;
+  width: 100%;
+  height: 510px;
+  z-index: 10;
+  background-color: white;
+  border: 0.5px solid rgb(219, 215, 215);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgb(224, 220, 220);
 }
