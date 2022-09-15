@@ -1,0 +1,13 @@
+@use "./mixin";
+
+.container {
+  // background-color: blue;
+  width: 100%;
+  @include mixin.flex_center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem 0 6rem;
+  .image {
+    flex: 2;
+  }
+}

@@ -11,7 +11,7 @@ export default function Layout({ children }: Props) {
   return (
     <Fragment>
       <Header />
-      <main>{children}</main>
+      <main style={{ padding: "4rem" }}>{children}</main>
       <Footer />
     </Fragment>
   );
