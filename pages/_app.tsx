@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import Head from "next/head";
 //=================================================================
 import { UiProvider } from "../context/ui-context";
@@ -25,8 +26,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <QueryClientProvider client={queryClient}>
           <Layout>
             <Component {...pageProps} />
-            <MenuPopup />
           </Layout>
+          <MenuPopup />
+          <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </UiProvider>
     </>

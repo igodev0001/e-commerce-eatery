@@ -42,9 +42,17 @@
 }
 
 .bold {
-  font-size: 18px;
+  font-weight: 900;
 }
 
 .normal {
+  font-weight: 400;
+}
+
+.large {
+  font-size: 18px;
+}
+
+.medium {
   font-size: 14px;
 }

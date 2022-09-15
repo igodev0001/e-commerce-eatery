@@ -46,7 +46,7 @@ export default function NavBar() {
             <ButtonDropD
               action={menuHandler}
               isOpen={isMenuOpen}
-              fontSize="bold"
+              fontSize="large"
             >
               Our Menu
             </ButtonDropD>

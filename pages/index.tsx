@@ -1,9 +1,12 @@
 import type { NextPage } from "next";
 //=====================================================
 import FeedWide from "../components/feed/FeedWide";
+import useCategoriy from "../hooks/useCategoriy";
 //=====================================================
 
 const Home: NextPage = () => {
+  useCategoriy();
+
   return (
     <div>
       <FeedWide

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@prisma/client": "^4.1.1",
+    "axios": "^0.27.2",
     "next": "12.2.0",
     "next-connect": "^0.13.0",
     "prop-types": "^15.8.1",

@@ -3,58 +3,14 @@ import MenuItem from "./MenuItem";
 import styles from "../../styles/Menu.module.scss";
 //===================================================
 
-const category = [
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-  {
-    title: "Beverages",
-    img: "https://s7d1.scene7.com/is/image/mcdonalds/drinks_300x300:menu-category-desktop",
-  },
-];
-
-export default function MenuList() {
+interface Props {
+  categories: { id: number; image: string; name: string }[];
+}
+export default function MenuList({ categories }: Props) {
   return (
     <div className={styles.menuList}>
-      {category.map((item, index) => (
-        <MenuItem key={index} img={item.img} title={item.title} />
+      {categories.map((item) => (
+        <MenuItem key={item.id} img={item.image} title={item.name} />
       ))}
     </div>
   );

@@ -1,8 +1,6 @@
-import React, { Fragment, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 //======================================================
-import BackDrop from "./BackDrop";
 import Overlay from "./OverLay";
 //======================================================
 
@@ -12,20 +10,9 @@ interface Props {
 }
 
 function Modal({ st, children }: Props) {
-  // const [isBrowser, setIsBrowser] = useState(false);
-
-  // useEffect(() => {
-  //   setIsBrowser(st);
-  // }, [st]);
-
   if (st) {
     const portalElement = document.getElementById("modal-root") as HTMLElement;
-    return (
-      <Fragment>
-        {ReactDOM.createPortal(<BackDrop />, portalElement)}
-        {ReactDOM.createPortal(<Overlay>{children}</Overlay>, portalElement)}
-      </Fragment>
-    );
+    return ReactDOM.createPortal(<Overlay>{children}</Overlay>, portalElement);
   } else {
     return null;
   }

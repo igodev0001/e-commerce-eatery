@@ -4,11 +4,13 @@ import { createContext, useState, useContext } from "react";
 interface GlobalContent {
   isMenuOpen: boolean;
   menuHandler: () => void;
+  closeMenu: () => void;
 }
 
 export const UiContext = createContext<GlobalContent>({
   isMenuOpen: false,
   menuHandler: Function,
+  closeMenu: Function,
 });
 
 interface Props {
@@ -21,9 +23,12 @@ export function UiProvider({ children }: Props) {
   function menuHandler() {
     setIsMenuOpen(!isMenuOpen);
   }
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
 
   return (
-    <UiContext.Provider value={{ isMenuOpen, menuHandler }}>
+    <UiContext.Provider value={{ isMenuOpen, menuHandler, closeMenu }}>
       {children}
     </UiContext.Provider>
   );
