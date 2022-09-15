@@ -9,7 +9,7 @@
   color: rgb(41, 41, 41);
   margin-top: 0.2rem;
 
-  .nav_links {
+  .actions {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -20,19 +20,29 @@
     span {
       @include mixin.flex_center;
     }
-  }
-
-  .nav_menu {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 18px;
-    padding-right: 1rem;
-    span {
-      @include mixin.flex_center;
+    .action {
+      padding-inline: 1rem;
     }
   }
-}
 
-.actions {
-  padding-inline: 1rem;
+  .links {
+    font-size: 18px;
+    padding-right: 7rem;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      :first-child {
+        border-bottom: none;
+      }
+      li {
+        padding-bottom: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    .active {
+      border-bottom: 5px solid #d90007;
+    }
+  }
 }

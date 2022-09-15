@@ -17,6 +17,7 @@ model Category {
 model Product {
   id Int @id @default(autoincrement())
   name String
+  desc String
   price Int
   price_small Int
   price_medium Int
@@ -27,6 +28,18 @@ model Product {
   ingredients Ingredient[]
   carts Cart_Item[]
   orders Order_Item[]
+  nutrition Product_nutrition?
+
+}
+
+model Product_nutrition {
+  id Int @id @default(autoincrement())
+  product Product @relation(fields: [product_id], references: [id])
+  product_id Int @unique
+  calories Int
+  totalFat Int
+  totalCarb Int
+  protein Int
 }
 
 model Ingredient {

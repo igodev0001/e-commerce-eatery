@@ -1,5 +1,7 @@
-import styles from "../../styles/FeedInfo.module.scss";
 import LinkButton from "../Button/LinkButton";
+//======================================================
+import styles from "../../styles/FeedInfo.module.scss";
+//======================================================
 
 interface Props {
   title: string;
@@ -23,7 +25,7 @@ export default function FeedInfo({
         <p>{desc}</p>
         <span>{legal}</span>
       </div>
-      <LinkButton href={href} name={linkName} />
+      <LinkButton href={href} name={linkName} style="yellow" />
     </div>
   );
 }
