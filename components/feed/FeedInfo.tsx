@@ -1,5 +1,7 @@
-import styles from "../../styles/FeedInfo.module.scss";
 import LinkButton from "../Button/LinkButton";
+//======================================================
+import styles from "../../styles/FeedInfo.module.scss";
+//======================================================
 
 interface Props {
   title: string;

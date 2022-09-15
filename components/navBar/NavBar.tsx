@@ -1,11 +1,12 @@
+import { useState } from "react";
+//======================================================
 import Button from "../Button/Button";
 import ButtonDropD from "../Button/ButtonDropD";
 import SearchBar from "../searchBar/SearchBar";
-//===========================================
-import styles from "../../styles/NavBar.module.scss";
-import { useState } from "react";
 import { useUiContext } from "../../context/ui-context";
-//===========================================
+//======================================================
+import styles from "../../styles/NavBar.module.scss";
+//======================================================
 
 export default function NavBar() {
   const { isMenuOpen, menuHandler } = useUiContext();

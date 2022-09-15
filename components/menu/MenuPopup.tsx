@@ -1,8 +1,9 @@
+//======================================================
 import Modal from "../modal/Modal";
-import { useUiContext } from "../../context/ui-context";
 import MenuList from "./MenuList";
+import { useUiContext } from "../../context/ui-context";
 import LinkButton from "../Button/LinkButton";
-
+//======================================================
 import styles from "../../styles/Menu.module.scss";
 
 export default function MenuPopup() {

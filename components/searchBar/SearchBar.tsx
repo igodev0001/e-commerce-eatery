@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import { MdSearch } from "react-icons/md";
-import styles from "../../styles/SearchBar.module.scss";
 //===========================================
+import styles from "../../styles/SearchBar.module.scss";
+//======================================================
+
 export default function SearchBar() {
   const [visible, setVisible] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);

@@ -11,8 +11,9 @@ import {
 import googlePlay from "../../public/images/googlePlay.png";
 import appStore from "../../public/images/appStore.png";
 import Logo from "../logo/Logo";
-import styles from "../../styles/Footer.module.scss";
 //===========================================
+import styles from "../../styles/Footer.module.scss";
+//======================================================
 
 export default function Footer() {
   return (

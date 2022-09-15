@@ -1,11 +1,16 @@
-import "../styles/globals.scss";
 import type { AppProps } from "next/app";
-import Layout from "../components/layout/Layout";
+import { QueryClient, QueryClientProvider } from "react-query";
 import Head from "next/head";
+//=================================================================
 import { UiProvider } from "../context/ui-context";
+import Layout from "../components/layout/Layout";
 import MenuPopup from "../components/menu/MenuPopup";
+//=================================================================
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient();
+
   return (
     <>
       <Head>
@@ -17,10 +22,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <UiProvider>
-        <Layout>
-          <Component {...pageProps} />
-          <MenuPopup />
-        </Layout>
+        <QueryClientProvider client={queryClient}>
+          <Layout>
+            <Component {...pageProps} />
+            <MenuPopup />
+          </Layout>
+        </QueryClientProvider>
       </UiProvider>
     </>
   );

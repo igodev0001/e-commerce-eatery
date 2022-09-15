@@ -1,4 +1,5 @@
 import { createContext, useState, useContext } from "react";
+//======================================================
 
 interface GlobalContent {
   isMenuOpen: boolean;

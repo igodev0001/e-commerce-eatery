@@ -1,8 +1,9 @@
 import Image from "next/image";
-import React from "react";
-import styles from "../../styles/FeedWide.module.scss";
-
+//======================================================
 import FeedInfo from "./FeedInfo";
+//======================================================
+import styles from "../../styles/FeedWide.module.scss";
+//======================================================
 
 interface Props {
   title: string;
