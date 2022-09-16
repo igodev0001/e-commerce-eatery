@@ -102,6 +102,16 @@ model Order_Item {
   quantity Int
 }
 
+model Feed {
+  id Int @id @default(autoincrement())
+  title String
+  desc String
+  legal String
+  image String
+  linkName String
+  href String
+}
+
 enum Status {
   Pending
   Done

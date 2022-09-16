@@ -9,9 +9,9 @@ interface Props {
   title: string;
   desc: string;
   legal?: string;
+  image: string;
   linkName: string;
   href: string;
-  banner: string;
 }
 
 export default function FeedWide({
@@ -20,12 +20,12 @@ export default function FeedWide({
   legal,
   linkName,
   href,
-  banner,
+  image,
 }: Props) {
   return (
     <section className={styles.container}>
       <div className={styles.image}>
-        <Image src={banner} alt="mccustom" width="900px" height="400px" />
+        <Image src={image} alt="mccustom" width="900px" height="400px" />
       </div>
       <FeedInfo
         title={title}
