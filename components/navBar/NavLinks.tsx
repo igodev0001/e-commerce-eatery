@@ -1,14 +1,19 @@
 import React from "react";
 import ButtonDropD from "../Button/ButtonDropD";
 import styles from "../../styles/NavBar.module.scss";
-import { useUiContext } from "../../context/ui-context";
+import { useMenuContext } from "../../context/menu-context";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function NavLinks() {
-  const { isMenuOpen, menuHandler } = useUiContext();
+  const { state, dispatch } = useMenuContext();
   const router = useRouter();
 
   const path = router.pathname;
+
+  function menuHandler() {
+    dispatch({ type: "toggleMenu" });
+  }
 
   return (
     <nav className={styles.links}>
@@ -16,14 +21,14 @@ export default function NavLinks() {
         <li>
           <ButtonDropD
             action={menuHandler}
-            isOpen={isMenuOpen}
+            isOpen={state.isMenuOpen}
             fontSize="large"
           >
             Our Menu
           </ButtonDropD>
         </li>
         <li className={path === "/download_app" ? `${styles.active}` : ""}>
-          <span>Download App</span>
+          <Link href="/download_app">Download App</Link>
         </li>
         <li className={path === "/reward" ? `${styles.active}` : ""}>
           <span>MyMcDonald Rewards</span>

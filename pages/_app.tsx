@@ -3,7 +3,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import Head from "next/head";
 //=================================================================
-import { UiProvider } from "../context/ui-context";
+// import { UiProvider } from "../context/ui-context";
+import MenuProvider from "../context/menu-context";
 import Layout from "../components/layout/Layout";
 import MenuPopup from "../components/menu/MenuPopup";
 //=================================================================
@@ -22,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <UiProvider>
+      <MenuProvider>
         <QueryClientProvider client={queryClient}>
           <Layout>
             <Component {...pageProps} />
@@ -30,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <MenuPopup />
           <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
-      </UiProvider>
+      </MenuProvider>
     </>
   );
 }

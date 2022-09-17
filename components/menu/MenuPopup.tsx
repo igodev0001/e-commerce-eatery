@@ -2,8 +2,8 @@ import { useQueryClient } from "react-query";
 //======================================================
 import Modal from "../modal/Modal";
 import MenuList from "./MenuList";
-import { useUiContext } from "../../context/ui-context";
 import LinkButton from "../Button/LinkButton";
+import { useMenuContext } from "../../context/menu-context";
 //======================================================
 import styles from "../../styles/Menu.module.scss";
 
@@ -14,10 +14,11 @@ export default function MenuPopup() {
     image: string;
     name: string;
   }[];
-  const { isMenuOpen } = useUiContext();
+  const { state } = useMenuContext();
+  console.log(state);
 
   return (
-    <Modal st={isMenuOpen}>
+    <Modal st={state.isMenuOpen}>
       <div className={styles.wrapper}>
         <MenuList categories={categories} />
         <LinkButton

@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 
 //=====================================================
 import FeedWide from "../components/feed/FeedWide";
-import useCategory from "../hooks/useCategory";
 //=====================================================
 
 interface Props {
@@ -19,7 +18,6 @@ interface Props {
 [];
 
 export default function Home({ feed }: Props) {
-  useCategory();
   return (
     <div>
       {feed.map((item) => (
