@@ -5,20 +5,22 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prod": "next build && next start",
     "start": "next start",
     "lint": "next lint",
     "prettify": "prettier --write ."
   },
   "dependencies": {
     "@prisma/client": "^4.1.1",
+    "@tanstack/react-query": "^4.3.4",
+    "@tanstack/react-query-devtools": "^4.3.5",
     "axios": "^0.27.2",
     "next": "12.2.0",
     "next-connect": "^0.13.0",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.4.0",
-    "react-query": "^3.39.2"
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@types/node": "18.0.3",

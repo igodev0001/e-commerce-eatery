@@ -2,12 +2,12 @@
 
 .container {
   @include mixin.flex_center;
-
   margin: 0 3.2rem 0 0;
 }
 
 .largeSize {
   width: 100px;
+  cursor: pointer;
 }
 
 .mediumSize {

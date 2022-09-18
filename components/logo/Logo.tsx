@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 //===========================================
 import LogoImage from "../../public/images/McDonalds-Logo.png";
 //===========================================
@@ -21,7 +23,15 @@ export default function Logo({ size }: Props) {
 
   return (
     <div className={`${styles.container}  ${styles[dynamicSize]}`}>
-      <Image src={LogoImage} alt="logo" />
+      {size === "l" ? (
+        <Link href="/">
+          <a>
+            <Image src={LogoImage} alt="logo" />
+          </a>
+        </Link>
+      ) : (
+        <Image src={LogoImage} alt="logo" />
+      )}
     </div>
   );
 }

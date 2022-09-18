@@ -4,7 +4,7 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 //===========================================
 interface Props {
-  children: React.ReactNode;
+  children: JSX.Element;
 }
 
 export default function Layout({ children }: Props) {

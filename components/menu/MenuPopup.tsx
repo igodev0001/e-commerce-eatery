@@ -1,25 +1,22 @@
-import { useQueryClient } from "react-query";
 //======================================================
 import Modal from "../modal/Modal";
 import MenuList from "./MenuList";
-import { useUiContext } from "../../context/ui-context";
 import LinkButton from "../Button/LinkButton";
 //======================================================
 import styles from "../../styles/Menu.module.scss";
+import useCategory from "../../hooks/useCategory";
 
-export default function MenuPopup() {
-  const queryClient = useQueryClient();
-  const categories = queryClient.getQueryData("categories") as {
-    id: number;
-    image: string;
-    name: string;
-  }[];
-  const { isMenuOpen } = useUiContext();
+interface Props {
+  isMenuOpen: boolean;
+}
+
+export default function MenuPopup({ isMenuOpen }: Props) {
+  const { data } = useCategory();
 
   return (
-    <Modal st={isMenuOpen}>
+    <Modal open={isMenuOpen}>
       <div className={styles.wrapper}>
-        <MenuList categories={categories} />
+        <MenuList categories={data} />
         <LinkButton
           href="google.com"
           name="View Full Menu"

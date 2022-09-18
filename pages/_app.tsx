@@ -1,17 +1,19 @@
 import type { AppProps } from "next/app";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import {
+  QueryClient,
+  QueryClientProvider,
+  Hydrate,
+} from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Head from "next/head";
 //=================================================================
-import { UiProvider } from "../context/ui-context";
 import Layout from "../components/layout/Layout";
-import MenuPopup from "../components/menu/MenuPopup";
 //=================================================================
 import "../styles/globals.scss";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -22,15 +24,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <UiProvider>
-        <QueryClientProvider client={queryClient}>
+
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
           <Layout>
             <Component {...pageProps} />
           </Layout>
-          <MenuPopup />
-          <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
-      </UiProvider>
+        </Hydrate>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   );
 }
