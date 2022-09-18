@@ -1,6 +1,10 @@
 import type { AppProps } from "next/app";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import {
+  QueryClient,
+  QueryClientProvider,
+  Hydrate,
+} from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Head from "next/head";
 //=================================================================
 // import { UiProvider } from "../context/ui-context";
@@ -24,9 +28,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       {/* <MenuProvider> */}
       <QueryClientProvider client={queryClient}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Hydrate state={pageProps.dehydratedState}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
       {/* </MenuProvider> */}

@@ -3,7 +3,6 @@ import Logo from "../logo/Logo";
 import NavBar from "../navBar/NavBar";
 //===========================================
 import styles from "../../styles/Header.module.scss";
-import useCategory from "../../hooks/useCategory";
 import MenuPopup from "../menu/MenuPopup";
 import { useState } from "react";
 //===========================================
@@ -14,8 +13,6 @@ export default function Header() {
   function menuHandler() {
     setIsMenuOpen((prev) => !prev);
   }
-
-  useCategory();
 
   return (
     <div className={styles.container}>

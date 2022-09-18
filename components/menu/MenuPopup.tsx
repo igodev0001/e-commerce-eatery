@@ -1,4 +1,4 @@
-import { useQueryClient } from "react-query";
+// import { useQueryClient } from "@tanstack/react-query";
 //======================================================
 import Modal from "../modal/Modal";
 import MenuList from "./MenuList";
@@ -6,24 +6,19 @@ import LinkButton from "../Button/LinkButton";
 // import { useMenuContext } from "../../context/menu-context";
 //======================================================
 import styles from "../../styles/Menu.module.scss";
+import useCategory from "../../hooks/useCategory";
 
 interface Props {
   isMenuOpen: boolean;
 }
 
 export default function MenuPopup({ isMenuOpen }: Props) {
-  const queryClient = useQueryClient();
-  const categories = queryClient.getQueryData("categories") as {
-    id: number;
-    image: string;
-    name: string;
-  }[];
-  // const { state } = useMenuContext();
+  const { data } = useCategory();
 
   return (
     <Modal open={isMenuOpen}>
       <div className={styles.wrapper}>
-        <MenuList categories={categories} />
+        <MenuList categories={data} />
         <LinkButton
           href="google.com"
           name="View Full Menu"
