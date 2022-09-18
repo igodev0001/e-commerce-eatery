@@ -1,29 +1,25 @@
-import React from "react";
 import ButtonDropD from "../Button/ButtonDropD";
 import styles from "../../styles/NavBar.module.scss";
-import { useMenuContext } from "../../context/menu-context";
+// import { useMenuContext } from "../../context/menu-context";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-export default function NavLinks() {
-  const { state, dispatch } = useMenuContext();
+interface Props {
+  isMenuOpen: boolean;
+  toggleMenu: () => void;
+}
+
+export default function NavLinks({ isMenuOpen, toggleMenu }: Props) {
+  // const { state, dispatch } = useMenuContext();
   const router = useRouter();
 
   const path = router.pathname;
-
-  function menuHandler() {
-    dispatch({ type: "toggleMenu" });
-  }
 
   return (
     <nav className={styles.links}>
       <ul>
         <li>
-          <ButtonDropD
-            action={menuHandler}
-            isOpen={state.isMenuOpen}
-            fontSize="large"
-          >
+          <ButtonDropD action={toggleMenu} isOpen={isMenuOpen} fontSize="large">
             Our Menu
           </ButtonDropD>
         </li>

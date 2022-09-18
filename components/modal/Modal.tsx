@@ -5,12 +5,12 @@ import Overlay from "./OverLay";
 //======================================================
 
 interface Props {
-  st: boolean;
+  open: boolean;
   children: React.ReactNode;
 }
 
-function Modal({ st, children }: Props) {
-  if (st) {
+function Modal({ open, children }: Props) {
+  if (open) {
     const portalElement = document.getElementById("modal-root") as HTMLElement;
     return ReactDOM.createPortal(<Overlay>{children}</Overlay>, portalElement);
   } else {

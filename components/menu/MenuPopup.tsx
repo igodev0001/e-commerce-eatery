@@ -3,22 +3,25 @@ import { useQueryClient } from "react-query";
 import Modal from "../modal/Modal";
 import MenuList from "./MenuList";
 import LinkButton from "../Button/LinkButton";
-import { useMenuContext } from "../../context/menu-context";
+// import { useMenuContext } from "../../context/menu-context";
 //======================================================
 import styles from "../../styles/Menu.module.scss";
 
-export default function MenuPopup() {
+interface Props {
+  isMenuOpen: boolean;
+}
+
+export default function MenuPopup({ isMenuOpen }: Props) {
   const queryClient = useQueryClient();
   const categories = queryClient.getQueryData("categories") as {
     id: number;
     image: string;
     name: string;
   }[];
-  const { state } = useMenuContext();
-  console.log(state);
+  // const { state } = useMenuContext();
 
   return (
-    <Modal st={state.isMenuOpen}>
+    <Modal open={isMenuOpen}>
       <div className={styles.wrapper}>
         <MenuList categories={categories} />
         <LinkButton

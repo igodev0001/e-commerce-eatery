@@ -4,9 +4,8 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import Head from "next/head";
 //=================================================================
 // import { UiProvider } from "../context/ui-context";
-import MenuProvider from "../context/menu-context";
 import Layout from "../components/layout/Layout";
-import MenuPopup from "../components/menu/MenuPopup";
+// import MenuPopup from "../components/menu/MenuPopup";
 //=================================================================
 import "../styles/globals.scss";
 
@@ -23,15 +22,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MenuProvider>
-        <QueryClientProvider client={queryClient}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-          <MenuPopup />
-          <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
-      </MenuProvider>
+      {/* <MenuProvider> */}
+      <QueryClientProvider client={queryClient}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+      {/* </MenuProvider> */}
     </>
   );
 }
