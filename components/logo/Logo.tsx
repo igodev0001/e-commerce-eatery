@@ -25,7 +25,7 @@ export default function Logo({ size }: Props) {
     <div className={`${styles.container}  ${styles[dynamicSize]}`}>
       {size === "l" ? (
         <Link href="/">
-          <a href="inherite">
+          <a>
             <Image src={LogoImage} alt="logo" />
           </a>
         </Link>

@@ -6,3 +6,4 @@ export default function useCategory() {
     axios.get("/api/category").then((res) => res.data)
   );
 }
+
