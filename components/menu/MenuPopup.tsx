@@ -1,9 +1,7 @@
-// import { useQueryClient } from "@tanstack/react-query";
 //======================================================
 import Modal from "../modal/Modal";
 import MenuList from "./MenuList";
 import LinkButton from "../Button/LinkButton";
-// import { useMenuContext } from "../../context/menu-context";
 //======================================================
 import styles from "../../styles/Menu.module.scss";
 import useCategory from "../../hooks/useCategory";
