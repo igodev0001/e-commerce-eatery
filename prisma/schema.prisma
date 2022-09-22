@@ -110,6 +110,8 @@ model Feed {
   image String
   linkName String
   href String
+  size String
+  usedFor String
 }
 
 enum Status {
