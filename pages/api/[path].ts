@@ -4,6 +4,7 @@ import globalHandler from "../../lib/handler";
 const handler = globalHandler();
 
 handler.get(async (req, res) => {
+  console.log("hi");
   const prisma = new PrismaClient();
   const { path } = req.query;
 

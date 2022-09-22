@@ -4,35 +4,35 @@ import FeedWide from "../feed/FeedWide";
 import Dl_Component from "./Dl_Component";
 
 import styles from "../../styles/DownloadApp.module.scss";
-import useFetch from "../../hooks/useFetch";
 
-interface Feed {
-  id: number;
-  title: string;
-  desc: string;
-  legal: string;
-  image: string;
-  linkName: string;
-  href: string;
+interface Props {
+  feed: {
+    id: number;
+    title: string;
+    desc: string;
+    legal: string;
+    image: string;
+    linkName: string;
+    href: string;
+  }[];
 }
-
-export default function Dl() {
-  const feeds = useFetch("download_app");
+export default function DownloadApp({ feed }: Props) {
   return (
     <div className={styles.container}>
       <h1>McDonald&apos;s App</h1>
 
-      {feeds.data.map((item: Feed) => (
-        <FeedWide
-          key={item.id}
-          title={item.title}
-          desc={item.desc}
-          legal={item.legal}
-          image={item.image}
-          linkName={item.linkName}
-          href={item.href}
-        />
-      ))}
+      {feed &&
+        feed.map((item) => (
+          <FeedWide
+            key={item.id}
+            title={item.title}
+            desc={item.desc}
+            legal={item.legal}
+            image={item.image}
+            linkName={item.linkName}
+            href={item.href}
+          />
+        ))}
 
       <Dl_Component />
       <div className={styles.desc}>
