@@ -8,3 +8,43 @@
     margin-bottom: 7rem;
   }
 }
+
+.banner {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0 7rem;
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    h2 {
+      font-size: 3rem;
+      color: #292929;
+    }
+  }
+  .icon {
+    display: flex;
+    gap: 2rem;
+
+    div {
+      width: 110px;
+    }
+  }
+}
+
+.desc {
+  margin-bottom: 10rem;
+  h2 {
+    font-size: 2rem;
+    color: #292929;
+    margin-bottom: 1.5rem;
+  }
+  p {
+    line-height: 1.7rem;
+    a {
+      color: rgb(44, 62, 223);
+      text-decoration: underline;
+    }
+  }
+}

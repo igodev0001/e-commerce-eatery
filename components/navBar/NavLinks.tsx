@@ -27,7 +27,7 @@ export default function NavLinks({ isMenuOpen, toggleMenu }: Props) {
           <Link href="/download_app">Download App</Link>
         </li>
         <li className={path === "/my_mcdonalds" ? `${styles.active}` : ""}>
-          <Link href="/my_mcdonalds">MyMcDonald Rewards</Link>
+          <Link href="/my_mcdonalds">MyMcDonald&apos;s Rewards</Link>
         </li>
         <li className={path === "/deals" ? `${styles.active}` : ""}>
           <Link href="/deals">Exclusive Deals</Link>

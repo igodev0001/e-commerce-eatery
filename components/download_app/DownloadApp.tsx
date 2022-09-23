@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import FeedWide from "../feed/FeedWide";
-import Dl_Component from "./Dl_Component";
+import AppBanner from "./AppBanner";
 
 import styles from "../../styles/DownloadApp.module.scss";
 
@@ -34,7 +34,7 @@ export default function DownloadApp({ feed }: Props) {
           />
         ))}
 
-      <Dl_Component />
+      <AppBanner />
       <div className={styles.desc}>
         <h2>Deals and Much More</h2>
         <p>
