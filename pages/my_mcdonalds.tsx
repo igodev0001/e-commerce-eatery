@@ -1,5 +1,8 @@
-import React from "react";
+import MyMcDonalds from "../components/MyMcDonalds/MyMcDonalds";
+import useFetch from "../hooks/useFetch";
 
-export default function my_mcdonalds() {
-  return <div>my_mcdonalds</div>;
+export default function My_mcdonalds() {
+  const { data } = useFetch("my_mcdonalds");
+
+  return data && <MyMcDonalds feed={data} />;
 }

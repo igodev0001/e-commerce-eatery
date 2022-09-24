@@ -13,6 +13,7 @@ interface Props {
     image: string;
     linkName: string;
     href: string;
+    size: string;
   }[];
 }
 

@@ -10,8 +10,9 @@ interface Props {
   desc: string;
   legal?: string;
   image: string;
-  linkName: string;
-  href: string;
+  linkName?: string;
+  href?: string;
+  size: string;
 }
 
 export default function FeedWide({
@@ -21,6 +22,7 @@ export default function FeedWide({
   linkName,
   href,
   image,
+  size,
 }: Props) {
   return (
     <section className={styles.container}>
@@ -33,6 +35,7 @@ export default function FeedWide({
         legal={legal}
         linkName={linkName}
         href={href}
+        size={size}
       />
     </section>
   );

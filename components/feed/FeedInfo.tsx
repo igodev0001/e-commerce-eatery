@@ -7,8 +7,9 @@ interface Props {
   title: string;
   desc: string;
   legal?: string;
-  linkName: string;
-  href: string;
+  linkName?: string;
+  href?: string;
+  size: string;
 }
 
 export default function FeedInfo({
@@ -25,7 +26,9 @@ export default function FeedInfo({
         <p>{desc}</p>
         <span>{legal}</span>
       </div>
-      <LinkButton href={href} name={linkName} style="yellow" />
+      {linkName && href && (
+        <LinkButton href={href} name={linkName} style="yellow" />
+      )}
     </div>
   );
 }
