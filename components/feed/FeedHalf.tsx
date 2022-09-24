@@ -26,7 +26,7 @@ export default function FeedHalf({
   return (
     <section className={styles.container}>
       <div className={styles.image}>
-        <Image src={image} alt="mccustom" width="900px" height="400px" />
+        <Image src={image} alt="mccustom" width="573px" height="383px" />
       </div>
       <FeedInfo
         title={title}

@@ -1,6 +1,7 @@
 import styles from "../../styles/MyMcDonalds.module.scss";
 import FeedHalfContainer from "../feed/FeedHalfContainer";
 import FeedWide from "../feed/FeedWide";
+import MyMcDonaldsBanner from "./MyMcDonalsBanner";
 
 interface Props {
   feed: {
@@ -18,6 +19,7 @@ interface Props {
 export default function MyMcDonalds({ feed }: Props) {
   const wideFeed = feed.filter((item) => item.size === "wide");
   const halfFeedLink = feed.filter((item) => item.size === "half" && item.href);
+  const pointsFeed = feed.filter((item) => item.size === "half" && !item.href);
 
   return (
     <div className={styles.container}>
@@ -44,6 +46,23 @@ export default function MyMcDonalds({ feed }: Props) {
         ))}
 
         <FeedHalfContainer feed={halfFeedLink} />
+        <div className={styles.parag}>
+          <h2>How to Earn Points and Redeem Faves</h2>
+          <p>
+            Order like a pro––all it takes is one code or one scan to earn
+            MyMcDonald&apos;s Rewards points, quickly pay and redeem your
+            favorites.
+          </p>
+        </div>
+        <MyMcDonaldsBanner />
+        <div className={styles.parag}>
+          <h2>More Points Unlock More Rewards</h2>
+          <p>
+            It&apos;s easy to track your McDonald&apos;s points and see how far
+            you are from unlocking the next tier of free McDonald&apos;s.
+          </p>
+        </div>
+        <FeedHalfContainer feed={pointsFeed} />
       </div>
     </div>
   );
