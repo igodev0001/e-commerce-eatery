@@ -26,17 +26,19 @@ export default function NavLinks({ isMenuOpen, toggleMenu }: Props) {
         <li className={path === "/download_app" ? `${styles.active}` : ""}>
           <Link href="/download_app">Download App</Link>
         </li>
-        <li className={path === "/reward" ? `${styles.active}` : ""}>
-          <span>MyMcDonald Rewards</span>
+        <li className={path === "/my_mcdonalds" ? `${styles.active}` : ""}>
+          <Link href="/my_mcdonalds">MyMcDonald&apos;s Rewards</Link>
         </li>
-        <li className={path === "/exclusive_deals" ? `${styles.active}` : ""}>
-          <span>Exclusive Deals</span>
+        <li className={path === "/deals" ? `${styles.active}` : ""}>
+          <Link href="/deals">Exclusive Deals</Link>
         </li>
         <li className={path === "/about_our_food" ? `${styles.active}` : ""}>
-          <span>About Our Food</span>
+          <Link href="/about_our_food">About Our Food</Link>
         </li>
-        <li className={path === "/locate" ? `${styles.active}` : ""}>
-          <span>Locate</span>
+        <li
+          className={path === "/restaurant_locator" ? `${styles.active}` : ""}
+        >
+          <Link href="/restaurant_locator">Locate</Link>
         </li>
       </ul>
     </nav>

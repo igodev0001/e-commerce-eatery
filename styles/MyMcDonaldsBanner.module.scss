@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 5rem 0;
+}
+
+.item {
+  .image {
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #292929;
+  }
+  p {
+    margin-block: 1.4rem;
+    font-size: 0.9rem;
+  }
+  span {
+    font-size: 0.6rem;
+  }
+}

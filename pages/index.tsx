@@ -38,7 +38,11 @@ export default function Home({ feed }: Props) {
 export async function getStaticProps() {
   const prisma = new PrismaClient();
 
-  const feed = await prisma.feed.findMany();
+  const feed = await prisma.feed.findMany({
+    where: {
+      usedFor: "homePage",
+    },
+  });
 
   return {
     props: {
