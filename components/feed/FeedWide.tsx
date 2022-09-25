@@ -13,6 +13,8 @@ interface Props {
   linkName?: string;
   href?: string;
   size: string;
+  width?: string;
+  height?: string;
 }
 
 export default function FeedWide({
@@ -23,11 +25,18 @@ export default function FeedWide({
   href,
   image,
   size,
+  width,
+  height,
 }: Props) {
   return (
     <section className={styles.container}>
       <div className={styles.image}>
-        <Image src={image} alt="mccustom" width="900px" height="400px" />
+        <Image
+          src={image}
+          alt="mccustom"
+          width={width ? width : "748px"}
+          height={height ? height : "333px"}
+        />
       </div>
       <FeedInfo
         title={title}
