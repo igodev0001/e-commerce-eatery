@@ -9,6 +9,9 @@ const nextConfig = {
       "s7d1.scene7.com",
     ],
   },
+  env: {
+    MAP_KEY: process.env.NEXT_PUBLIC_MAP_KEY,
+  },
 };
 
 module.exports = nextConfig;

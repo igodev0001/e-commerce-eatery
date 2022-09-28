@@ -6,9 +6,7 @@ interface Props {
 
 // test it, if does not work, set an initial value for Location prop
 export default function Map({ location }: Props) {
-  const myKey = process.env.MAP_KEY;
-
-  console.log(location);
+  const myKey = process.env.NEXT_PUBLIC_MAP_KEY;
 
   return (
     <iframe
@@ -18,7 +16,7 @@ export default function Map({ location }: Props) {
       height="600"
       style={{ border: 0 }}
       loading="lazy"
-      title="sdff"
+      title="map"
     ></iframe>
   );
 }
