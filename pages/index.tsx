@@ -13,6 +13,7 @@ interface Props {
     image: string;
     linkName: string;
     href: string;
+    size: string;
   }[];
 }
 [];
@@ -29,6 +30,7 @@ export default function Home({ feed }: Props) {
           image={item.image}
           linkName={item.linkName}
           href={item.href}
+          size={item.size}
         />
       ))}
     </div>

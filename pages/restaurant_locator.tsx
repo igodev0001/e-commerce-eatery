@@ -1,5 +1,4 @@
-import React from "react";
-
-export default function restaurant_locator() {
-  return <div>restaurant_locator</div>;
+import Locate from "../components/Locate/Locate";
+export default function Restaurant_locator() {
+  return <Locate />;
 }

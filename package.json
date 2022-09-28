@@ -11,6 +11,10 @@
     "prettify": "prettier --write ."
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@googlemaps/js-api-loader": "^1.14.3",
+    "@mui/material": "^5.10.7",
     "@prisma/client": "^4.1.1",
     "@tanstack/react-query": "^4.3.4",
     "@tanstack/react-query-devtools": "^4.3.5",

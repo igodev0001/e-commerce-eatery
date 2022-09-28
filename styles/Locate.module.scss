@@ -1,0 +1,27 @@
+.input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  .field {
+    display: flex;
+    flex: 1;
+    button {
+      position: relative;
+      right: 65px;
+    }
+  }
+
+  .locate_me {
+    button {
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 15px 30px;
+      background-color: inherit;
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: #292929;
+      cursor: pointer;
+    }
+  }
+}

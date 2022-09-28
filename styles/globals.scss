@@ -19,3 +19,10 @@ a {
   margin: 0;
   line-height: normal;
 }
+
+.MuiTextField-root {
+  input {
+    font-size: 2rem;
+    color: #292929;
+  }
+}
