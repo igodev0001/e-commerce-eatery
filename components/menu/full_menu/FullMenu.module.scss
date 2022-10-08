@@ -1,0 +1,17 @@
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  .list {
+    list-style: none;
+    border: 1px solid rgb(186, 182, 182);
+    border-radius: 5px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: 1rem;
+    }
+  }
+}

@@ -18,7 +18,7 @@ export default function MenuPopup({ isMenuOpen }: Props) {
       <div className={styles.wrapper}>
         <MenuList categories={data} />
         <LinkButton
-          href="google.com"
+          href="/full_menu"
           name="View Full Menu"
           style="transparent"
         />
