@@ -1,6 +1,6 @@
 import MenuItem from "./MenuItem";
 //===================================================
-import styles from "../../styles/Menu.module.scss";
+import styles from "../../../styles/Menu.module.scss";
 //===================================================
 
 interface Props {

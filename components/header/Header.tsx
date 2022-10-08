@@ -3,7 +3,7 @@ import Logo from "../logo/Logo";
 import NavBar from "../navBar/NavBar";
 //===========================================
 import styles from "../../styles/Header.module.scss";
-import MenuPopup from "../menu/MenuPopup";
+import MenuPopup from "../menu/popup_menu/MenuPopup";
 import { useState } from "react";
 //===========================================
 

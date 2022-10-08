@@ -1,10 +1,10 @@
 //======================================================
-import Modal from "../modal/Modal";
+import Modal from "../../modal/Modal";
 import MenuList from "./MenuList";
-import LinkButton from "../Button/LinkButton";
+import LinkButton from "../../Button/LinkButton";
 //======================================================
-import styles from "../../styles/Menu.module.scss";
-import useCategory from "../../hooks/useCategory";
+import styles from "../../../styles/Menu.module.scss";
+import useCategory from "../../../hooks/useCategory";
 
 interface Props {
   isMenuOpen: boolean;
