@@ -1,5 +1,7 @@
-import React from "react";
+import FullMenu from "../../components/menu/full_menu/FullMenu";
+import useFetch from "../../hooks/useFetch";
+export default function CatName() {
+  const { data } = useFetch("products");
 
-export default function catMenu() {
-  return <div>[catName]</div>;
+  return <FullMenu products={data} />;
 }

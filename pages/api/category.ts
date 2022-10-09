@@ -7,11 +7,7 @@ handler.get(async (req, res) => {
   const prisma = new PrismaClient();
 
   try {
-    const categories = await prisma.category.findMany({
-      include: {
-        products: true,
-      },
-    });
+    const categories = await prisma.category.findMany();
     res.json(categories);
   } catch (err) {
     console.log(err);

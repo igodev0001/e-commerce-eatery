@@ -1,13 +1,11 @@
 import styles from "./FullMenu.module.scss";
-import GridItem from "./GridItem";
-
+import MenuGrid from "./MenuGrid";
 interface Category {
   id: number;
   name: string;
   image: string;
 }
 interface Props {
-  column: string;
   title: string;
   products: {
     id: number;
@@ -23,14 +21,11 @@ interface Props {
     favorite: boolean;
   }[];
 }
-
-export default function MenuGrid({ column, products, title }: Props) {
-  const columnNumber = column === "3" ? "gridThree" : "";
+export default function FavoritesMenu({ products, title }: Props) {
   return (
-    <div className={`${styles.grid} ${styles[columnNumber]}`}>
-      <h2>{title}</h2>
-      {products &&
-        products.map((item) => <GridItem key={item.id} product={item} />)}
+    <div className={styles.favorites}>
+      <h1>McDonald&apos;s Menu</h1>
+      <MenuGrid column="3" products={products} title={title} />
     </div>
   );
 }
