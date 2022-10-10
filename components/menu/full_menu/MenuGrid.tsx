@@ -25,12 +25,15 @@ interface Props {
 }
 
 export default function MenuGrid({ column, products, title }: Props) {
-  const columnNumber = column === "3" ? "gridThree" : "";
+  const gridThree = column === "3" ? "gridThree" : "";
   return (
-    <div className={`${styles.grid} ${styles[columnNumber]}`}>
+    <div className={styles.menuGrid}>
+      {title === "Featured Favorites" && <h1>McDonald&apos;s Menu</h1>}
       <h2>{title}</h2>
-      {products &&
-        products.map((item) => <GridItem key={item.id} product={item} />)}
+      <ul className={`${styles.grid} ${styles[gridThree]}`}>
+        {products &&
+          products.map((item) => <GridItem key={item.id} product={item} />)}
+      </ul>
     </div>
   );
 }

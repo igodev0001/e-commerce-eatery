@@ -18,7 +18,12 @@ export default function GridItem({ product }: Props) {
   return (
     <li className={styles.item}>
       <div className={styles.img}>
-        <Image src={product.image} alt={product.name} width="80" height="80" />
+        <Image
+          src={product.image}
+          alt={product.name}
+          width="250"
+          height="150"
+        />
       </div>
       <div className={styles.name}>{product.name}</div>
     </li>

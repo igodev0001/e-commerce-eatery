@@ -1,4 +1,19 @@
 .container {
+  .parag {
+    margin-block: 8rem 5rem;
+    a {
+      color: rgb(62, 111, 236);
+      text-decoration: underline;
+    }
+    span {
+      display: inline-block;
+      font-size: 0.6rem;
+      margin-top: 2rem;
+    }
+  }
+}
+
+.topDiv {
   display: grid;
   grid-template-columns: 25% 75%;
 }
@@ -27,5 +42,45 @@
       align-items: center;
       color: #292929;
     }
+  }
+}
+
+.menuGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #292929;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #292929;
+    margin-block: 3rem 5rem;
+  }
+
+  .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    list-style: none;
+    justify-content: space-around;
+    row-gap: 8rem;
+  }
+  .gridThree {
+    grid-template-columns: auto auto auto;
+  }
+  .item {
+    width: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 1rem;
   }
 }
