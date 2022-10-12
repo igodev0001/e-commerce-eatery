@@ -36,11 +36,17 @@
     border-radius: 5px;
     padding: 0.5rem 1rem;
     gap: 0.5rem;
+    padding: 0;
 
     .item {
       display: flex;
       align-items: center;
       color: #292929;
+      padding-left: 1rem;
+      cursor: pointer;
+    }
+    .activeItem {
+      border-left: 6px solid rgb(214, 23, 23);
     }
   }
 }
