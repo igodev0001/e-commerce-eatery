@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../../styles/About.module.scss";
+import styles from "./About.module.scss";
 import FeedHalfContainer from "../feed/FeedHalfContainer";
 
 interface Props {

@@ -1,6 +1,5 @@
-import ButtonDropD from "../Button/ButtonDropD";
-import styles from "../../styles/NavBar.module.scss";
-// import { useMenuContext } from "../../context/menu-context";
+import ButtonDropD from "../button/ButtonDropD";
+import styles from "./NavBar.module.scss";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -10,7 +9,6 @@ interface Props {
 }
 
 export default function NavLinks({ isMenuOpen, toggleMenu }: Props) {
-  // const { state, dispatch } = useMenuContext();
   const router = useRouter();
 
   const path = router.pathname;

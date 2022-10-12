@@ -1,5 +1,5 @@
 import useFetch from "../hooks/useFetch";
-import ExclusiveDeals from "../components/Deals/ExclusiveDeals";
+import ExclusiveDeals from "../components/exclusiveDeals/ExclusiveDeals";
 
 export default function Deals() {
   const { data } = useFetch("deals");

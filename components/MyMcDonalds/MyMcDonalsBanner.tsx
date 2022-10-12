@@ -1,4 +1,4 @@
-import styles from "../../styles/MyMcDonaldsBanner.module.scss";
+import styles from "./MyMcDonaldsBanner.module.scss";
 import Image from "next/image";
 import Banner1 from "../../public/images/myMcBanner1.jpeg";
 import Banner2 from "../../public/images/myMcBanner2.jpeg";

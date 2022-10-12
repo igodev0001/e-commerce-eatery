@@ -1,4 +1,4 @@
-import styles from "../../styles/ExclusiveDeals.module.scss";
+import styles from "./ExclusiveDeals.module.scss";
 import FeedHalfContainer from "../feed/FeedHalfContainer";
 import FeedWide from "../feed/FeedWide";
 

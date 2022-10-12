@@ -1,4 +1,4 @@
-import styles from "../../styles/MyMcDonalds.module.scss";
+import styles from "./MyMcDonalds.module.scss";
 import FeedHalfContainer from "../feed/FeedHalfContainer";
 import FeedWide from "../feed/FeedWide";
 import MyMcDonaldsBanner from "./MyMcDonalsBanner";

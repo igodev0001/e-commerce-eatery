@@ -1,6 +1,6 @@
-import LinkButton from "../Button/LinkButton";
+import LinkButton from "../button/LinkButton";
 //======================================================
-import styles from "../../styles/FeedInfo.module.scss";
+import styles from "./FeedInfo.module.scss";
 //======================================================
 
 interface Props {

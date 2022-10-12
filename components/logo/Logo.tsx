@@ -4,7 +4,7 @@ import Link from "next/link";
 //===========================================
 import LogoImage from "../../public/images/McDonalds-Logo.png";
 //===========================================
-import styles from "../../styles/Logo.module.scss";
+import styles from "./Logo.module.scss";
 //===========================================
 
 interface Props {

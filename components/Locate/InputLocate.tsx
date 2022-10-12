@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
-import Button from "../Button/Button";
-import styles from "../../styles/Locate.module.scss";
+import Button from "../button/Button";
+import styles from "./Locate.module.scss";
 import { MdSearch, MdGpsFixed } from "react-icons/md";
 import React, { ChangeEvent, useState } from "react";
 

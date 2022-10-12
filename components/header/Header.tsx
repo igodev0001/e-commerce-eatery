@@ -2,7 +2,7 @@
 import Logo from "../logo/Logo";
 import NavBar from "../navBar/NavBar";
 //===========================================
-import styles from "../../styles/Header.module.scss";
+import styles from "./Header.module.scss";
 import MenuPopup from "../menu/popup_menu/MenuPopup";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";

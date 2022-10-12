@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Button from "../Button/Button";
-import ButtonDropD from "../Button/ButtonDropD";
+import Button from "../button/Button";
+import ButtonDropD from "../button/ButtonDropD";
 import SearchBar from "../searchBar/SearchBar";
 
-import styles from "../../styles/NavBar.module.scss";
+import styles from "./NavBar.module.scss";
 
 export default function NavActions() {
   const [isLangOpen, setIsLangOpen] = useState<boolean>(false);

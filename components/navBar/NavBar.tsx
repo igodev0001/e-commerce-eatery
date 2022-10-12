@@ -2,7 +2,7 @@
 import NavActions from "./NavActions";
 import NavLinks from "./NavLinks";
 //======================================================
-import styles from "../../styles/NavBar.module.scss";
+import styles from "./NavBar.module.scss";
 //======================================================
 
 interface Props {

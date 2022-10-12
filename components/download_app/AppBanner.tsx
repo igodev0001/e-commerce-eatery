@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../../styles/DownloadApp.module.scss";
+import styles from "./DownloadApp.module.scss";
 import appStore from "../../public/images/appStore.png";
 import googlePlay from "../../public/images/googlePlay.png";
 

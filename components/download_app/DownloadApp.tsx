@@ -1,7 +1,7 @@
 import FeedWide from "../feed/FeedWide";
 import AppBanner from "./AppBanner";
 
-import styles from "../../styles/DownloadApp.module.scss";
+import styles from "./DownloadApp.module.scss";
 import AppDescription from "./AppDescription";
 
 interface Props {

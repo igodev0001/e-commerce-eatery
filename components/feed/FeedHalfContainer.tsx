@@ -1,4 +1,4 @@
-import styles from "../../styles/FeedHalfContainer.module.scss";
+import styles from "./FeedHalfContainer.module.scss";
 import FeedHalf from "./FeedHalf";
 
 interface Props {

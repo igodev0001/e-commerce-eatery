@@ -1,9 +1,9 @@
 //======================================================
 import Modal from "../../modal/Modal";
 import MenuList from "./MenuList";
-import LinkButton from "../../Button/LinkButton";
+import LinkButton from "../../button/LinkButton";
 //======================================================
-import styles from "../../../styles/Menu.module.scss";
+import styles from "./PopupMenu.module.scss";
 import useCategory from "../../../hooks/useCategory";
 
 interface Props {

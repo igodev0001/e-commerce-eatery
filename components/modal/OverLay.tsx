@@ -1,4 +1,4 @@
-import styles from "../../styles/Modal.module.scss";
+import styles from "./Modal.module.scss";
 import PropTypes from "prop-types";
 
 interface Props {

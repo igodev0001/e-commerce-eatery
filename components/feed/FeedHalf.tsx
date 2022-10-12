@@ -2,7 +2,7 @@ import Image from "next/image";
 //======================================================
 import FeedInfo from "./FeedInfo";
 //======================================================
-import styles from "../../styles/FeedHalf.module.scss";
+import styles from "./FeedHalf.module.scss";
 //======================================================
 interface Props {
   title: string;

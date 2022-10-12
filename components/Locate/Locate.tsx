@@ -1,4 +1,4 @@
-import styles from "../../styles/Locate.module.scss";
+import styles from "./Locate.module.scss";
 import InputLocate from "./InputLocate";
 import Map from "../map/Map";
 import { useState } from "react";

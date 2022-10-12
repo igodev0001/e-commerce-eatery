@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../styles/DownloadApp.module.scss";
+import styles from "./DownloadApp.module.scss";
 export default function AppDescription() {
   return (
     <div className={styles.desc}>
