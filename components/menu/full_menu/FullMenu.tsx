@@ -47,7 +47,7 @@ export default function FullMenu({ products }: Props) {
         ) : (
           <MenuGrid
             products={products}
-            title={products && products[0].category.name}
+            title={products[0]?.category.name}
             column="3"
           />
         )}

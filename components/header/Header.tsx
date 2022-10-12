@@ -13,10 +13,10 @@ export default function Header() {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.pathname === "/full_menu") {
+    if (router.pathname.includes("/full_menu") || router.query.catName) {
       setIsMenuOpen(false);
     }
-  }, [router.pathname]);
+  }, [router.pathname, router.query.catName]);
 
   function menuHandler() {
     setIsMenuOpen((prev) => !prev);

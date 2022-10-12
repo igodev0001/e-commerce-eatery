@@ -28,5 +28,7 @@ export default function CatName() {
     }) => item.category.name.toLowerCase() === catName
   );
 
-  return <FullMenu products={dynamicData} />;
+  console.log(dynamicData);
+
+  return dynamicData && <FullMenu products={dynamicData} />;
 }

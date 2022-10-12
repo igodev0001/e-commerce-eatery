@@ -8,13 +8,13 @@ interface Props {
 }
 export default function MenuList({ categories }: Props) {
   return (
-    <div className={styles.menuList}>
+    <ul className={styles.menuList}>
       {categories.map(
         (item) =>
           item.name !== "Favorites" && (
             <MenuItem key={item.id} img={item.image} title={item.name} />
           )
       )}
-    </div>
+    </ul>
   );
 }
