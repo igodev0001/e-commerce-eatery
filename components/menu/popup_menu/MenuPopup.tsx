@@ -1,10 +1,11 @@
 //======================================================
-import Modal from "../modal/Modal";
+import Modal from "../../modal/Modal";
 import MenuList from "./MenuList";
-import LinkButton from "../Button/LinkButton";
+import LinkButton from "../../button/LinkButton";
+import useCategory from "../../../hooks/useCategory";
 //======================================================
-import styles from "../../styles/Menu.module.scss";
-import useCategory from "../../hooks/useCategory";
+import styles from "./PopupMenu.module.scss";
+//======================================================
 
 interface Props {
   isMenuOpen: boolean;
@@ -18,7 +19,7 @@ export default function MenuPopup({ isMenuOpen }: Props) {
       <div className={styles.wrapper}>
         <MenuList categories={data} />
         <LinkButton
-          href="google.com"
+          href="/full_menu"
           name="View Full Menu"
           style="transparent"
         />

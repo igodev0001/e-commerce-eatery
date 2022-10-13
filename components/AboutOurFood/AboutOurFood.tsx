@@ -1,21 +1,12 @@
 import Image from "next/image";
-import styles from "../../styles/About.module.scss";
+//========================================================
 import FeedHalfContainer from "../feed/FeedHalfContainer";
+//========================================================
+import { Feeds } from "../../lib/types";
+import styles from "./About.module.scss";
+//========================================================
 
-interface Props {
-  feed: {
-    id: number;
-    title: string;
-    desc: string;
-    legal?: string;
-    image: string;
-    linkName?: string;
-    href?: string;
-    size: string;
-  }[];
-}
-
-export default function AboutOurFood({ feed }: Props) {
+export default function AboutOurFood({ feed }: Feeds) {
   const halfFeedLink = feed.filter((item) => item.size === "half" && item.href);
 
   return (

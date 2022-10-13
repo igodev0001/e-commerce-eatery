@@ -1,5 +1,5 @@
-@use "./mixin";
-@import "./variables";
+@use "../../styles/mixin";
+@import "../../styles/variables";
 
 .button {
   @include mixin.flex_center;

@@ -1,32 +1,14 @@
-import styles from "../../styles/FeedHalfContainer.module.scss";
 import FeedHalf from "./FeedHalf";
+//======================================================
+import { Feeds } from "../../lib/types";
+import styles from "./FeedHalfContainer.module.scss";
+//======================================================
 
-interface Props {
-  feed: {
-    id: number;
-    title: string;
-    desc: string;
-    legal?: string;
-    image: string;
-    linkName?: string;
-    href?: string;
-    size: string;
-  }[];
-}
-export default function FeedHalfContainer({ feed }: Props) {
+export default function FeedHalfContainer({ feed }: Feeds) {
   return (
     <div className={styles.container}>
       {feed.map((item) => (
-        <FeedHalf
-          key={item.id}
-          title={item.title}
-          desc={item.desc}
-          legal={item.legal}
-          image={item.image}
-          linkName={item.linkName}
-          href={item.href}
-          size={item.size}
-        />
+        <FeedHalf key={item.id} feed={item} />
       ))}
     </div>
   );

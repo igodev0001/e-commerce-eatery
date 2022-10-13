@@ -1,7 +1,10 @@
-import styles from "../../styles/Locate.module.scss";
+import { useState } from "react";
+//========================================================
 import InputLocate from "./InputLocate";
 import Map from "../map/Map";
-import { useState } from "react";
+//========================================================
+import styles from "./Locate.module.scss";
+//========================================================
 
 export default function Locate() {
   const [location, setLocation] = useState("LosAngeles");

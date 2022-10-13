@@ -29,7 +29,7 @@ model Product {
   carts Cart_Item[]
   orders Order_Item[]
   nutrition Product_nutrition?
-
+  favorite Boolean @default(false)
 }
 
 model Product_nutrition {

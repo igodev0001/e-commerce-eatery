@@ -1,4 +1,4 @@
-@use "./mixin";
+@use "../../styles/mixin";
 
 .container {
   display: flex;
@@ -36,7 +36,7 @@
         border-bottom: none;
       }
       li {
-        padding-bottom: 1rem;
+        padding-bottom: 0.7rem;
         cursor: pointer;
       }
     }

@@ -1,33 +1,19 @@
-import LinkButton from "../Button/LinkButton";
+import LinkButton from "../button/LinkButton";
 //======================================================
-import styles from "../../styles/FeedInfo.module.scss";
+import { Feed } from "../../lib/types";
+import styles from "./FeedInfo.module.scss";
 //======================================================
 
-interface Props {
-  title: string;
-  desc: string;
-  legal?: string;
-  linkName?: string;
-  href?: string;
-  size: string;
-}
-
-export default function FeedInfo({
-  title,
-  desc,
-  legal,
-  linkName,
-  href,
-}: Props) {
+export default function FeedInfo({ feed }: Feed) {
   return (
     <div className={styles.container}>
-      <h2>{title}</h2>
+      <h2>{feed.title}</h2>
       <div className={styles.desc}>
-        <p>{desc}</p>
-        <span>{legal}</span>
+        <p>{feed.desc}</p>
+        <span>{feed.legal}</span>
       </div>
-      {linkName && href && (
-        <LinkButton href={href} name={linkName} style="yellow" />
+      {feed.linkName && feed.href && (
+        <LinkButton href={feed.href} name={feed.linkName} style="yellow" />
       )}
     </div>
   );

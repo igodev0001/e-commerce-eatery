@@ -1,17 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-
 //===========================================
 import LogoImage from "../../public/images/McDonalds-Logo.png";
 //===========================================
-import styles from "../../styles/Logo.module.scss";
+import { LogoSize } from "../../lib/types";
+import styles from "./Logo.module.scss";
 //===========================================
 
-interface Props {
-  size: string;
-}
-
-export default function Logo({ size }: Props) {
+export default function Logo({ size }: LogoSize) {
   let dynamicSize;
   if (size === "l") {
     dynamicSize = "largeSize";

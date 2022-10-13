@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useContext } from "react";
+//======================================================
 
 const initialState = { isMenuOpen: false, categories: [{}] };
 
