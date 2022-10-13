@@ -1,34 +1,15 @@
-// import useFetch from "../../../hooks/useFetch";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import useCategory from "../../../hooks/useCategory";
-import styles from "./FullMenu.module.scss";
+import Link from "next/link";
+//======================================================
 import MenuGrid from "./MenuGrid";
 import SideMenu from "./SideMenu";
+import useCategory from "../../../hooks/useCategory";
+//======================================================
+import { Products, Category } from "../../../lib/types";
+import styles from "./FullMenu.module.scss";
+//======================================================
 
-interface Category {
-  id: number;
-  name: string;
-  image: string;
-}
-
-interface Props {
-  products: {
-    id: number;
-    name: string;
-    desc: string;
-    price: number;
-    price_small: number;
-    price_medium: number;
-    price_big: number;
-    image: string;
-    category_id: number;
-    category: Category;
-    favorite: boolean;
-  }[];
-}
-
-export default function FullMenu({ products }: Props) {
+export default function FullMenu({ products }: Products) {
   const router = useRouter();
   const { data } = useCategory();
 
@@ -37,7 +18,7 @@ export default function FullMenu({ products }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.topDiv}>
-        {data && <SideMenu category={data} />}
+        {data && <SideMenu categories={data} />}
         {router.pathname === "/full_menu" ? (
           <MenuGrid
             products={FavoriteProducts}
@@ -58,24 +39,7 @@ export default function FullMenu({ products }: Props) {
           {data &&
             router.pathname === "/full_menu" &&
             data.map(
-              (cat: {
-                id: number;
-                name: string;
-                image: string;
-                products: {
-                  id: number;
-                  name: string;
-                  desc: string;
-                  price: number;
-                  price_small: number;
-                  price_medium: number;
-                  price_big: number;
-                  image: string;
-                  category_id: number;
-                  category: Category;
-                  favorite: boolean;
-                }[];
-              }) =>
+              (cat: Category) =>
                 cat.name !== "Favorites" && (
                   <MenuGrid
                     key={cat.id}

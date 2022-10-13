@@ -1,19 +1,14 @@
-import styles from "./FullMenu.module.scss";
 import SideMenuItem from "./SideMenuItem";
+//======================================================
+import { Categories } from "../../../lib/types";
+import styles from "./FullMenu.module.scss";
+//======================================================
 
-interface Props {
-  categoryList: {
-    id: number;
-    name: string;
-    image: string;
-  }[];
-}
-
-export default function SideMenuList({ categoryList }: Props) {
+export default function SideMenuList({ categories }: Categories) {
   return (
     <ul className={styles.list}>
-      {categoryList.map((item) => (
-        <SideMenuItem key={item.id} categoryItem={item} />
+      {categories.map((item) => (
+        <SideMenuItem key={item.id} category={item} />
       ))}
     </ul>
   );

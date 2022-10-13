@@ -2,23 +2,13 @@ import { PrismaClient } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+//======================================================
 import DownloadApp from "../components/download_app/DownloadApp";
+//======================================================
+import { Feeds } from "../lib/types";
+//======================================================
 
-interface Props {
-  feed: {
-    id: number;
-    title: string;
-    desc: string;
-    legal: string;
-    image: string;
-    linkName: string;
-    href: string;
-    size: string;
-  }[];
-}
-
-export default function Download_app({ feed }: Props) {
-  // const { data } = useFetch("download_app");
+export default function Download_app({ feed }: Feeds) {
   const { data } = useQuery(
     ["download_app"],
     () => axios.get("/api/download_app").then((res) => res.data),

@@ -1,41 +1,40 @@
-import styles from "./FullMenu.module.scss";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+//======================================================
+import { Category } from "../../../lib/types";
+import styles from "./FullMenu.module.scss";
+//======================================================
 
 interface Props {
-  categoryItem: {
-    id: number;
-    name: string;
-    image: string;
-  };
+  category: Category;
 }
 
-export default function SideMenuItem({ categoryItem }: Props) {
+export default function SideMenuItem({ category }: Props) {
   const router = useRouter();
   const activeClass =
-    router.query.catName === categoryItem.name.toLowerCase() ||
-    (router.pathname === "/full_menu" && categoryItem.name === "Favorites")
+    router.query.catName === category.name.toLowerCase() ||
+    (router.pathname === "/full_menu" && category.name === "Favorites")
       ? "activeItem"
       : "";
   return (
     <Link
       href={
-        categoryItem.name === "Favorites"
+        category.name === "Favorites"
           ? `/full_menu`
-          : `/full_menu/${categoryItem.name.toLowerCase()}`
+          : `/full_menu/${category.name.toLowerCase()}`
       }
     >
       <li className={`${styles.item} ${styles[activeClass]}`}>
         <div className={styles.img}>
           <Image
-            src={categoryItem.image}
-            alt={categoryItem.name}
+            src={category.image}
+            alt={category.name}
             width="80"
             height="80"
           />
         </div>
-        <div className={styles.title}>{categoryItem.name}</div>
+        <div className={styles.title}>{category.name}</div>
       </li>
     </Link>
   );

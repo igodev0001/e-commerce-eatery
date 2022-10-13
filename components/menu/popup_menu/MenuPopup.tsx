@@ -2,9 +2,10 @@
 import Modal from "../../modal/Modal";
 import MenuList from "./MenuList";
 import LinkButton from "../../button/LinkButton";
+import useCategory from "../../../hooks/useCategory";
 //======================================================
 import styles from "./PopupMenu.module.scss";
-import useCategory from "../../../hooks/useCategory";
+//======================================================
 
 interface Props {
   isMenuOpen: boolean;

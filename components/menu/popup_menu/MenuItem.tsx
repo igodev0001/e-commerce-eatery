@@ -1,20 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 //======================================================
+import { Category } from "../../../lib/types";
 import styles from "./PopupMenu.module.scss";
 //======================================================
 
 interface Props {
-  img: string;
-  title: string;
+  category: Category;
 }
 
-export default function MenuItems({ img, title }: Props) {
+export default function MenuItems({ category }: Props) {
   return (
-    <Link href={`/full_menu/${title.toLowerCase()}`}>
+    <Link href={`/full_menu/${category.name.toLowerCase()}`}>
       <li className={styles.menuItem}>
-        <Image src={img} alt={title} width="78px" height="78px" />
-        <span>{title}</span>
+        <Image
+          src={category.image}
+          alt={category.name}
+          width="78px"
+          height="78px"
+        />
+        <span>{category.name}</span>
       </li>
     </Link>
   );

@@ -44,3 +44,36 @@ export interface Button_Link {
   name: string;
   style: string;
 }
+
+export interface LogoSize {
+  size: string;
+}
+
+export interface Category {
+  id: number;
+  name: string;
+  image: string;
+  products: Product[];
+}
+
+export interface Categories {
+  categories: Category[];
+}
+
+export interface Product {
+  id: number;
+  name: string;
+  desc: string;
+  price: number;
+  price_small: number;
+  price_medium: number;
+  price_big: number;
+  image: string;
+  category_id: number;
+  category: Category;
+  favorite: boolean;
+}
+
+export interface Products {
+  products: Product[];
+}

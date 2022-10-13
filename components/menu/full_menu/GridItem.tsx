@@ -1,17 +1,11 @@
 import Image from "next/image";
+//======================================================
+import { Product } from "../../../lib/types";
 import styles from "./FullMenu.module.scss";
+//======================================================
 
 interface Props {
-  product: {
-    id: number;
-    name: string;
-    // desc: string;
-    // price: number;
-    // price_small: number;
-    // price_medium: number;
-    // big: number;
-    image: string;
-  };
+  product: Product;
 }
 
 export default function GridItem({ product }: Props) {

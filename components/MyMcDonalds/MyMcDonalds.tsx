@@ -1,8 +1,10 @@
-import styles from "./MyMcDonalds.module.scss";
 import FeedHalfContainer from "../feed/FeedHalfContainer";
 import FeedWide from "../feed/FeedWide";
 import MyMcDonaldsBanner from "./MyMcDonalsBanner";
+//======================================================
 import { Feeds } from "../../lib/types";
+import styles from "./MyMcDonalds.module.scss";
+//======================================================
 
 export default function MyMcDonalds({ feed }: Feeds) {
   const wideFeed = feed.filter((item) => item.size === "wide");

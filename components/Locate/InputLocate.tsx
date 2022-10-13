@@ -1,8 +1,11 @@
-import { TextField } from "@mui/material";
-import Button from "../button/Button";
-import styles from "./Locate.module.scss";
-import { MdSearch, MdGpsFixed } from "react-icons/md";
 import React, { ChangeEvent, useState } from "react";
+import { TextField } from "@mui/material";
+import { MdSearch, MdGpsFixed } from "react-icons/md";
+//========================================================
+import Button from "../button/Button";
+//========================================================
+import styles from "./Locate.module.scss";
+//========================================================
 
 interface Props {
   handleLocation: (place: string) => void;

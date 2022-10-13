@@ -1,22 +1,16 @@
-import { useState } from "react";
-import styles from "./FullMenu.module.scss";
 import SideMenuList from "./SideMenuList";
+//======================================================
+import { Categories } from "../../../lib/types";
+import styles from "./FullMenu.module.scss";
+//======================================================
 
-interface Props {
-  category: {
-    id: number;
-    name: string;
-    image: string;
-  }[];
-}
-
-export default function SideMenu({ category }: Props) {
-  const favorites = category.filter((item) => item.name === "Favorites");
-  const catList = category.filter((item) => item.name !== "Favorites");
+export default function SideMenu({ categories }: Categories) {
+  const favorites = categories.filter((item) => item.name === "Favorites");
+  const catList = categories.filter((item) => item.name !== "Favorites");
   return (
     <div className={styles.sideMenu}>
-      <SideMenuList categoryList={favorites} />
-      <SideMenuList categoryList={catList} />
+      <SideMenuList categories={favorites} />
+      <SideMenuList categories={catList} />
     </div>
   );
 }

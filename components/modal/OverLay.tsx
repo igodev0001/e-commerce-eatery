@@ -1,5 +1,7 @@
-import styles from "./Modal.module.scss";
 import PropTypes from "prop-types";
+//======================================================
+import styles from "./Modal.module.scss";
+//======================================================
 
 interface Props {
   children: React.ReactNode;

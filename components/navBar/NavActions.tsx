@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+//======================================================
 import Button from "../button/Button";
 import ButtonDropD from "../button/ButtonDropD";
 import SearchBar from "../searchBar/SearchBar";
-
+//======================================================
 import styles from "./NavBar.module.scss";
+//======================================================
 
 export default function NavActions() {
   const [isLangOpen, setIsLangOpen] = useState<boolean>(false);

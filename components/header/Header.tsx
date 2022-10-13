@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 //===========================================
 import Logo from "../logo/Logo";
 import NavBar from "../navBar/NavBar";
+import MenuPopup from "../menu/popup_menu/MenuPopup";
 //===========================================
 import styles from "./Header.module.scss";
-import MenuPopup from "../menu/popup_menu/MenuPopup";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 //===========================================
 
 export default function Header() {

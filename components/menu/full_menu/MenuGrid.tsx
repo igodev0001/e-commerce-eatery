@@ -1,30 +1,15 @@
-import styles from "./FullMenu.module.scss";
 import GridItem from "./GridItem";
+//======================================================
+import { Products } from "../../../lib/types";
+import styles from "./FullMenu.module.scss";
+//======================================================
 
-interface Category {
-  id: number;
-  name: string;
-  image: string;
-}
-interface Props {
+interface Props extends Products {
   column: string;
   title: string;
-  products: {
-    id: number;
-    name: string;
-    desc: string;
-    price: number;
-    price_small: number;
-    price_medium: number;
-    price_big: number;
-    image: string;
-    category_id: number;
-    category: Category;
-    favorite: boolean;
-  }[];
 }
 
-export default function MenuGrid({ column, products, title }: Props) {
+export default function MenuGrid({ products, column, title }: Props) {
   const gridThree = column === "3" ? "gridThree" : "";
   return (
     <div className={styles.menuGrid}>
