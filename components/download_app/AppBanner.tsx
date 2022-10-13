@@ -1,8 +1,10 @@
-import React from "react";
 import Image from "next/image";
-import styles from "./DownloadApp.module.scss";
+//========================================================
 import appStore from "../../public/images/appStore.png";
 import googlePlay from "../../public/images/googlePlay.png";
+//========================================================
+import styles from "./DownloadApp.module.scss";
+//========================================================
 
 export default function AppBanner() {
   return (

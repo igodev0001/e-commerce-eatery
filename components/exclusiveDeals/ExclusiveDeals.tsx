@@ -1,21 +1,11 @@
-import styles from "./ExclusiveDeals.module.scss";
 import FeedHalfContainer from "../feed/FeedHalfContainer";
 import FeedWide from "../feed/FeedWide";
+//========================================================
+import { Feeds } from "../../lib/types";
+import styles from "./ExclusiveDeals.module.scss";
+//========================================================
 
-interface Props {
-  feed: {
-    id: number;
-    title: string;
-    desc: string;
-    legal?: string;
-    image: string;
-    linkName?: string;
-    href?: string;
-    size: string;
-  }[];
-}
-
-export default function ExclusiveDeals({ feed }: Props) {
+export default function ExclusiveDeals({ feed }: Feeds) {
   const wideFeed = feed.filter((item) => item.size === "wide");
   const halfFeedLink = feed.filter((item) => item.size === "half" && item.href);
 
@@ -25,19 +15,7 @@ export default function ExclusiveDeals({ feed }: Props) {
 
       <div className={styles.feed}>
         {wideFeed.map(
-          (item, index) =>
-            index === 0 && (
-              <FeedWide
-                key={item.id}
-                title={item.title}
-                desc={item.desc}
-                legal={item.legal}
-                image={item.image}
-                linkName={item.linkName}
-                href={item.href}
-                size={item.size}
-              />
-            )
+          (item, index) => index === 0 && <FeedWide key={item.id} feed={item} />
         )}
 
         <FeedHalfContainer feed={halfFeedLink} />
@@ -46,13 +24,7 @@ export default function ExclusiveDeals({ feed }: Props) {
             index !== 0 && (
               <FeedWide
                 key={item.id}
-                title={item.title}
-                desc={item.desc}
-                legal={item.legal}
-                image={item.image}
-                linkName={item.linkName}
-                href={item.href}
-                size={item.size}
+                feed={item}
                 width="339.8px"
                 height="227.7px"
               />

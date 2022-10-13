@@ -1,15 +1,10 @@
 import Link from "next/link";
 //======================================================
+import { Button_Link } from "../../lib/types";
 import styles from "./Button.module.scss";
 //======================================================
 
-interface Props {
-  href: string;
-  name: string;
-  style: string;
-}
-
-export default function LinkButton({ href, name, style }: Props) {
+export default function LinkButton({ href, name, style }: Button_Link) {
   const bgColor = style === "yellow" ? "yellow" : "transparent";
   return (
     <div className={`${styles.button} ${styles[bgColor]}`}>

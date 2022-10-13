@@ -2,32 +2,12 @@ import Image from "next/image";
 //======================================================
 import FeedInfo from "./FeedInfo";
 //======================================================
+import { FeedWideProp } from "../../lib/types";
 import styles from "./FeedWide.module.scss";
 //======================================================
 
-interface Props {
-  title: string;
-  desc: string;
-  legal?: string;
-  image: string;
-  linkName?: string;
-  href?: string;
-  size: string;
-  width?: string;
-  height?: string;
-}
-
-export default function FeedWide({
-  title,
-  desc,
-  legal,
-  linkName,
-  href,
-  image,
-  size,
-  width,
-  height,
-}: Props) {
+export default function FeedWide({ feed, height, width }: FeedWideProp) {
+  const image = feed && feed.image;
   return (
     <section className={styles.container}>
       <div className={styles.image}>
@@ -38,14 +18,7 @@ export default function FeedWide({
           height={height ? height : "333px"}
         />
       </div>
-      <FeedInfo
-        title={title}
-        desc={desc}
-        legal={legal}
-        linkName={linkName}
-        href={href}
-        size={size}
-      />
+      <FeedInfo feed={feed} />
     </section>
   );
 }
