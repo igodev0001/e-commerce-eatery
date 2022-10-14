@@ -14,8 +14,8 @@ export default function ProductInfo({ product }: Props) {
         <Image
           src={product.image}
           alt={product.name}
-          width="400"
-          height="200"
+          width="780"
+          height="430"
         />
       </div>
       <div className={styles.info}>
