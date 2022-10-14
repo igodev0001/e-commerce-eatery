@@ -15,13 +15,11 @@
   gap: 2.6rem;
   row-gap: 3rem;
   list-style: none;
-  //   background-color: red;
   .item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     max-width: 180px;
-    // background-color: red;
   }
 }
