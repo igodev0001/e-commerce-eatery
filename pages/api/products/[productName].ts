@@ -14,7 +14,7 @@ handler.get(async (req, res) => {
         name: `${productName}`,
       },
       include: {
-        category: {},
+        ingredients: true,
       },
     });
     res.json(product);
