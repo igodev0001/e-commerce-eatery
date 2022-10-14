@@ -26,6 +26,7 @@ export async function getStaticProps() {
       usedFor: "download_app",
     },
   });
+  await prisma.$disconnect();
 
   return {
     props: {

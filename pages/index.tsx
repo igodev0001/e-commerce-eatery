@@ -23,6 +23,7 @@ export async function getStaticProps() {
       usedFor: "homePage",
     },
   });
+  await prisma.$disconnect();
 
   return {
     props: {

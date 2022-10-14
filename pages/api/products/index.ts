@@ -1,20 +1,18 @@
 import { PrismaClient } from "@prisma/client";
-import globalHandler from "../../lib/handler";
+import globalHandler from "../../../lib/handler";
 //======================================================
 
 const handler = globalHandler();
 
 handler.get(async (req, res) => {
   const prisma = new PrismaClient();
-  const { path } = req.query;
-
   try {
-    const data = await prisma.feed.findMany({
-      where: {
-        usedFor: `${path}`,
+    const product = await prisma.product.findMany({
+      include: {
+        category: {},
       },
     });
-    res.json(data);
+    res.json(product);
   } catch (err) {
     console.log(err);
   }

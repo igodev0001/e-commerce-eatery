@@ -1,16 +1,33 @@
 import Image from "next/image";
+import { Product } from "../../lib/types";
 //======================================================
 import styles from "./ProductDetail.module.scss";
 //======================================================
 
-export default function ProductInfo() {
+interface Props {
+  product: Product;
+}
+export default function ProductInfo({ product }: Props) {
   return (
     <div className={styles.productInfo}>
-      <div className={styles.image}>{/* <Image src={} alt={} /> */}</div>
+      <div className={styles.image}>
+        <Image
+          src={product.image}
+          alt={product.name}
+          width="400"
+          height="200"
+        />
+      </div>
       <div className={styles.info}>
-        <div className={styles.title}></div>
-        <div className={styles.price}></div>
-        <div className={styles.desc}></div>
+        <div className={styles.title}>
+          <h1>{product.name}</h1>
+        </div>
+        <div className={styles.price}>
+          <span>${product.price}</span>
+        </div>
+        <div className={styles.desc}>
+          <p>{product.desc}</p>
+        </div>
       </div>
     </div>
   );
