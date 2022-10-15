@@ -16,8 +16,8 @@ export default function RelatedItem({ product }: Props) {
           <Image
             src={product.image}
             alt={product.name}
-            width="250"
-            height="150"
+            width="200"
+            height="100"
           />
         </div>
         <div className={styles.name}>{product.name}</div>

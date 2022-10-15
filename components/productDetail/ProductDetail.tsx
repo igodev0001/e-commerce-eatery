@@ -19,7 +19,14 @@ export default function ProductDetail({ product }: Props) {
       )}
       <div>nutritional info</div>
       <RelatedProducts categoryId={product.category_id} pId={product.id} />
-      <div>important note</div>
+      <div>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
+          beatae laboriosam vero quo minima nulla repellat voluptatem delectus
+          repellendus. Nisi, repudiandae? Blanditiis ipsum autem quia, facere
+          iusto molestiae nesciunt quas!
+        </p>
+      </div>
     </div>
   );
 }
