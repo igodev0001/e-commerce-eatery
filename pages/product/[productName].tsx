@@ -8,9 +8,9 @@ export default function ProductDetailedPage() {
   const router = useRouter();
   const { productName } = router.query;
 
-  const { data } = useFetch(
-    productName ? `products/${productName}` : "products"
-  );
+  const name = productName?.toString().split("-").join(" ");
+
+  const { data } = useFetch(productName ? `products/${name}` : "products");
 
   return data && <ProductDetail product={data} />;
 }

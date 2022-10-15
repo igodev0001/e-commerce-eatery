@@ -10,8 +10,9 @@ interface Props {
 }
 
 export default function GridItem({ product }: Props) {
+  const route = product.name.split(" ").join("-");
   return (
-    <Link href={`/product/${product.name}`}>
+    <Link href={`/product/${route}`}>
       <li className={styles.item}>
         <div className={styles.img}>
           <Image
