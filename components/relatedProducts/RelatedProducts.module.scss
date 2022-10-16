@@ -2,8 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 2.5rem;
   margin-block: 3rem;
+  padding-block: 1rem 4rem;
+  background-color: #f9f9f9;
+  margin-inline: -3rem;
+
   h2 {
     font-size: 2.4rem;
     color: #292929;
@@ -13,19 +17,26 @@
 .grid {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 3rem;
+  gap: 2rem;
   list-style: none;
   .item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    width: 200px;
-    gap: 1rem;
+    justify-content: center;
+    text-align: left;
+    width: 275px;
+    height: 300px;
+    gap: 3rem;
+    padding: 25px 30px;
+    border: 1px solid rgb(190, 188, 188);
+    border-radius: 5px;
+    background-color: white;
     cursor: pointer;
     .name {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #292929;
+      width: 100%;
     }
   }
 }
