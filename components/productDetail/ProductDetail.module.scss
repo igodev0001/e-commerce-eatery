@@ -1,0 +1,34 @@
+.container {
+  margin-bottom: 5rem;
+  .importantNote {
+    font-size: 0.7rem;
+    color: #292929;
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+}
+.productInfo {
+  display: flex;
+  flex-direction: row;
+  .image {
+    flex: 2;
+  }
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: #292929;
+    h1 {
+      font-size: 3rem;
+    }
+    span {
+      font-size: 2rem;
+    }
+    p {
+      margin-top: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}

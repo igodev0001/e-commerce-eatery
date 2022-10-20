@@ -12,11 +12,12 @@ export default function CatName() {
   const router = useRouter();
   const { catName } = router.query;
 
-  const dynamicData = data?.filter(
-    (item: Product) => item.category.name.toLowerCase() === catName
-  );
-
-  console.log(dynamicData);
+  const categoryName = catName?.toString().split("-").join(" ");
+  const dynamicData =
+    catName &&
+    data?.filter(
+      (item: Product) => item.category.name.toLowerCase() === categoryName
+    );
 
   return dynamicData && <FullMenu products={dynamicData} />;
 }

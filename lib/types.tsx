@@ -55,6 +55,11 @@ export interface Category {
   image: string;
   products: Product[];
 }
+export interface Ingredient {
+  id: number;
+  name: string;
+  image: string;
+}
 
 export interface Categories {
   categories: Category[];
@@ -72,6 +77,7 @@ export interface Product {
   category_id: number;
   category: Category;
   favorite: boolean;
+  ingredients: Ingredient[];
 }
 
 export interface Products {

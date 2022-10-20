@@ -16,6 +16,7 @@ handler.get(async (req, res) => {
   } catch (err) {
     console.log(err.message);
   }
+  await prisma.$disconnect();
 });
 
 export default handler;

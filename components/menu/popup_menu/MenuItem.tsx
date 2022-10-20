@@ -10,8 +10,10 @@ interface Props {
 }
 
 export default function MenuItems({ category }: Props) {
+  const route = category.name.toLowerCase().split(" ").join("-");
+
   return (
-    <Link href={`/full_menu/${category.name.toLowerCase()}`}>
+    <Link href={`/full_menu/${route}`}>
       <li className={styles.menuItem}>
         <Image
           src={category.image}

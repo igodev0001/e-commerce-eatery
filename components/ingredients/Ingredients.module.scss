@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 8rem;
+  gap: 3.3rem;
+  h2 {
+    font-size: 2.4rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 2.6rem;
+  row-gap: 3rem;
+  list-style: none;
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 180px;
+  }
+}

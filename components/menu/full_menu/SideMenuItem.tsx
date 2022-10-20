@@ -17,12 +17,12 @@ export default function SideMenuItem({ category }: Props) {
     (router.pathname === "/full_menu" && category.name === "Favorites")
       ? "activeItem"
       : "";
+  const route = category.name.toLowerCase().split(" ").join("-");
+
   return (
     <Link
       href={
-        category.name === "Favorites"
-          ? `/full_menu`
-          : `/full_menu/${category.name.toLowerCase()}`
+        category.name === "Favorites" ? `/full_menu` : `/full_menu/${route}`
       }
     >
       <li className={`${styles.item} ${styles[activeClass]}`}>

@@ -1,16 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Product } from "../../lib/types";
+import styles from "./RelatedProducts.module.scss";
 //======================================================
-import { Product } from "../../../lib/types";
-import styles from "./FullMenu.module.scss";
-//======================================================
-
 interface Props {
   product: Product;
 }
-
-export default function GridItem({ product }: Props) {
+export default function RelatedItem({ product }: Props) {
   const route = product.name.split(" ").join("-");
+
   return (
     <Link href={`/product/${route}`}>
       <li className={styles.item}>
@@ -18,8 +16,8 @@ export default function GridItem({ product }: Props) {
           <Image
             src={product.image}
             alt={product.name}
-            width="250"
-            height="150"
+            width="280"
+            height="180"
           />
         </div>
         <div className={styles.name}>{product.name}</div>
