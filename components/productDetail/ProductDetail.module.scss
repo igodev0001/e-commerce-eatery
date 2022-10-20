@@ -1,5 +1,12 @@
 .container {
   margin-bottom: 5rem;
+  .importantNote {
+    font-size: 0.7rem;
+    color: #292929;
+    p {
+      margin-bottom: 1rem;
+    }
+  }
 }
 .productInfo {
   display: flex;
