@@ -4,7 +4,7 @@ interface Props {
 
 // test it, if does not work, set an initial value for Location prop
 export default function Map({ location }: Props) {
-  const myKey = process.env.NEXT_PUBLIC_MAP_KEY;
+  const myKey = process.env.MAP_KEY;
 
   return (
     <iframe
