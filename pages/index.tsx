@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import fs from "fs/promises";
-import FeedHalf from "../components/feed/FeedHalf";
+
 //=====================================================
 import FeedWide from "../components/feed/FeedWide";
 //=====================================================
