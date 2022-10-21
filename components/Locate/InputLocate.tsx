@@ -34,7 +34,8 @@ export default function InputLocate({ handleLocation }: Props) {
           value={input}
         />
         <Button action={submitLocation}>
-          <MdSearch />
+          {/* <MdSearch /> */}
+          search
         </Button>
       </div>
 

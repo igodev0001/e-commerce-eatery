@@ -10,7 +10,10 @@ const nextConfig = {
     ],
   },
   env: {
-    MAP_KEY: process.env.NEXT_PUBLIC_MAP_KEY,
+    MAP_KEY: "AIzaSyCnT10AG5i6N-GyVzXrWEWwrcHSRE27D8Q",
+    DATABASE_URL:
+      "postgresql://postgres:MlPYKbpaStI9WCHJ@db.bccwukwdftwnehyhxsny.supabase.co:5432/postgres",
+    CI: false,
   },
 };
 
