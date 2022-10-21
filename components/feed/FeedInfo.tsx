@@ -1,4 +1,4 @@
-import LinkButton from "../button/LinkButton";
+import LinkButton from "../Button/LinkButton";
 //======================================================
 import { Feed } from "../../lib/types";
 import styles from "./FeedInfo.module.scss";

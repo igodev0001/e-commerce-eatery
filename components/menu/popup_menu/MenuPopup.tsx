@@ -1,7 +1,7 @@
 //======================================================
 import Modal from "../../modal/Modal";
 import MenuList from "./MenuList";
-import LinkButton from "../../button/LinkButton";
+import LinkButton from "../../Button/LinkButton";
 import useCategory from "../../../hooks/useCategory";
 //======================================================
 import styles from "./PopupMenu.module.scss";

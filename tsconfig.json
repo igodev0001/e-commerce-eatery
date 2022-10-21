@@ -20,7 +20,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/api/user.js",
-    "components/locate/InputLocate.jsx"
+    "components/Locate/InputLocate.jsx"
   ],
   "exclude": ["node_modules"]
 }

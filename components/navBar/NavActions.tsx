@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //======================================================
-import Button from "../button/Button";
-import ButtonDropD from "../button/ButtonDropD";
+import Button from "../Button/Button";
+import ButtonDropD from "../Button/ButtonDropD";
 import SearchBar from "../searchBar/SearchBar";
 //======================================================
 import styles from "./NavBar.module.scss";

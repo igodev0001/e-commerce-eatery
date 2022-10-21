@@ -1,4 +1,4 @@
-import AboutOurFood from "../components/aboutOurFood/AboutOurFood";
+import AboutOurFood from "../components/AboutOurFood/AboutOurFood";
 import useFetch from "../hooks/useFetch";
 //======================================================
 

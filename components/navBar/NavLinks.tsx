@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 //======================================================
-import ButtonDropD from "../button/ButtonDropD";
+import ButtonDropD from "../Button/ButtonDropD";
 //======================================================
 import styles from "./NavBar.module.scss";
 //======================================================
