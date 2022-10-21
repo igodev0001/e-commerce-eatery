@@ -1,4 +1,6 @@
 import { PrismaClient } from "@prisma/client";
+import fs from "fs/promises";
+import FeedHalf from "../components/feed/FeedHalf";
 //=====================================================
 import FeedWide from "../components/feed/FeedWide";
 //=====================================================
@@ -23,11 +25,26 @@ export async function getStaticProps() {
       usedFor: "homePage",
     },
   });
+
+  //=========================================================================
+  // Read data from local database and write it on text file.
+  // then import data from text file into cloud database
+  //=========================================================================
+
+  // fs.writeFile("/Users/nima/product.txt", JSON.stringify(product));
+
+  // const product = await fs.readFile("/Users/nima/Product.txt", {
+  //   encoding: "utf-8",
+  // });
+
+  // await prisma.product.createMany({
+  //   data: JSON.parse(product),
+  // });
+  //=========================================================================
+
   await prisma.$disconnect();
 
   return {
-    props: {
-      feed,
-    },
+    props: { feed },
   };
 }
