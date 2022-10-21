@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import { TextField } from "@mui/material";
 import { MdSearch, MdGpsFixed } from "react-icons/md";
 //========================================================
-import Button from "../button/Button";
+// import Button from "../button/Button";
 //========================================================
 import styles from "./Locate.module.scss";
 //========================================================
@@ -33,10 +33,10 @@ export default function InputLocate({ handleLocation }: Props) {
           onChange={handleChange}
           value={input}
         />
-        <Button action={submitLocation}>
-          {/* <MdSearch /> */}
+        {/* <Button action={submitLocation}>
+          <MdSearch />
           search
-        </Button>
+        </Button> */}
       </div>
 
       <div className={styles.locate_me}>
