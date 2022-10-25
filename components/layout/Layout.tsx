@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 //===========================================
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import styles from "./Layout.module.scss";
 //===========================================
 interface Props {
   children: JSX.Element;
@@ -12,9 +13,7 @@ export default function Layout({ children }: Props) {
     <Fragment>
       <Header />
       <div id="modal-root"></div>
-      <main style={{ paddingInline: "3rem", paddingTop: "6rem" }}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
       <Footer />
     </Fragment>
   );
