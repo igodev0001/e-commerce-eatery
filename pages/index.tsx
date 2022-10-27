@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-
+// import fs from "fs/promises";
 //=====================================================
 import FeedWide from "../components/feed/FeedWide";
 //=====================================================
@@ -30,7 +30,22 @@ export async function getStaticProps() {
   // then import data from text file into cloud database
   //=========================================================================
 
-  // fs.writeFile("/Users/nima/product.txt", JSON.stringify(product));
+  // const products = await prisma.product.findMany({
+  //   include: {
+  //     ingredients: true,
+  //   },
+  // });
+  // const listOfItems: { pId: number; ingredId: number }[] = [];
+
+  // products.map(
+  //   (item) =>
+  //     item.ingredients &&
+  //     item.ingredients.map((ingred) =>
+  //       listOfItems.push({ pId: item.id, ingredId: ingred.id })
+  //     )
+  // );
+
+  // fs.writeFile("/Users/nima/listOfItems.txt", JSON.stringify(listOfItems));
 
   // const product = await fs.readFile("/Users/nima/Product.txt", {
   //   encoding: "utf-8",
