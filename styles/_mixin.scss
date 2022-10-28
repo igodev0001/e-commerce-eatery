@@ -7,8 +7,8 @@
 
 @mixin footer_flex() {
   display: flex;
-  justify-content: space-between;
-  padding-inline: 4rem;
+  justify-content: flex-start;
+  gap: 10rem;
 }
 
 @mixin flex_column() {
