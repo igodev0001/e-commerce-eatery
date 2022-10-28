@@ -14,8 +14,8 @@ export default function FeedWide({ feed, height, width }: FeedWideProp) {
         <Image
           src={image}
           alt="mccustom"
-          width={width ? width : "748px"}
-          height={height ? height : "333px"}
+          width={width ? width : "972px"}
+          height={height ? height : "432"}
         />
       </div>
       <FeedInfo feed={feed} />

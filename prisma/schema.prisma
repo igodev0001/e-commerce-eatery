@@ -30,6 +30,7 @@ model Product {
   orders Order_Item[]
   nutrition Product_nutrition?
   favorite Boolean @default(false)
+
 }
 
 model Product_nutrition {
@@ -113,6 +114,7 @@ model Feed {
   size String
   usedFor String
 }
+
 
 enum Status {
   Pending

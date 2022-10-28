@@ -1,8 +1,14 @@
 @import "../../styles/mixin";
 
+.container {
+  @include flex_center;
+  padding-top: 1rem;
+}
 .wrapper {
+  width: 70rem;
   padding: 1rem;
 }
+
 .top {
   @include footer_flex;
   margin-bottom: 3rem;
@@ -28,7 +34,8 @@
 
 .bottom {
   .social_media {
-    @include footer_flex;
+    display: flex;
+    justify-content: space-between;
 
     .left {
       @include flex_center;
@@ -53,12 +60,12 @@
     }
   }
   .seperator {
-    padding-inline: 2rem;
     margin-block: 2.5rem;
   }
 
   .legal_terms {
-    @include footer_flex;
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 1rem;
     .terms {
       @include flex_center;
