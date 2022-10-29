@@ -1,9 +1,25 @@
-import useFetch from "../hooks/useFetch";
 import ExclusiveDeals from "../components/exclusiveDeals/ExclusiveDeals";
+import { Feeds } from "../lib/types";
+import { PrismaClient } from "@prisma/client";
 //======================================================
 
-export default function Deals() {
-  const { data } = useFetch("deals");
+export default function Deals({ feed }: Feeds) {
+  return <ExclusiveDeals feed={feed} />;
+}
 
-  return data && <ExclusiveDeals feed={data} />;
+export async function getStaticProps() {
+  const prisma = new PrismaClient();
+
+  const feed = await prisma.feed.findMany({
+    where: {
+      usedFor: "deals",
+    },
+  });
+  await prisma.$disconnect();
+
+  return {
+    props: {
+      feed,
+    },
+  };
 }

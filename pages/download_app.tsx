@@ -1,6 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import React from "react";
 //======================================================
 import DownloadApp from "../components/download_app/DownloadApp";
@@ -9,13 +7,7 @@ import { Feeds } from "../lib/types";
 //======================================================
 
 export default function Download_app({ feed }: Feeds) {
-  const { data } = useQuery(
-    ["download_app"],
-    () => axios.get("/api/download_app").then((res) => res.data),
-    { initialData: feed }
-  );
-
-  return <DownloadApp feed={data} />;
+  return <DownloadApp feed={feed} />;
 }
 
 export async function getStaticProps() {

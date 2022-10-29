@@ -1,9 +1,25 @@
+import { PrismaClient } from "@prisma/client";
 import MyMcDonalds from "../components/MyMcDonalds/MyMcDonalds";
-import useFetch from "../hooks/useFetch";
+import { Feeds } from "../lib/types";
 //======================================================
 
-export default function My_mcdonalds() {
-  const { data } = useFetch("my_mcdonalds");
+export default function My_mcdonalds({ feed }: Feeds) {
+  return <MyMcDonalds feed={feed} />;
+}
 
-  return data && <MyMcDonalds feed={data} />;
+export async function getStaticProps() {
+  const prisma = new PrismaClient();
+
+  const feed = await prisma.feed.findMany({
+    where: {
+      usedFor: "my_mcdonalds",
+    },
+  });
+  await prisma.$disconnect();
+
+  return {
+    props: {
+      feed,
+    },
+  };
 }
