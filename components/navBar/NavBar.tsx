@@ -16,11 +16,15 @@ export default function NavBar({ isMenuOpen, toggleMenu }: Props) {
   function burgerHandler() {
     setBurgerOpen((prev) => !prev);
   }
+
+  function closeBurger() {
+    setBurgerOpen(false);
+  }
   return (
     <div className={styles.container}>
       <NavActions burgerHandler={burgerHandler} />
       <NavLinks isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-      <BurgerMenu show={burgerOpen} />
+      <BurgerMenu show={burgerOpen} closeMenu={closeBurger} />
     </div>
   );
 }

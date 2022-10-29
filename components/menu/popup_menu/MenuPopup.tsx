@@ -5,6 +5,8 @@ import LinkButton from "../../Button/LinkButton";
 import useCategory from "../../../hooks/useCategory";
 //======================================================
 import styles from "./PopupMenu.module.scss";
+import useWindowSize from "../../../hooks/useWindowSize";
+import { useEffect } from "react";
 //======================================================
 
 interface Props {
@@ -14,6 +16,13 @@ interface Props {
 
 export default function MenuPopup({ isMenuOpen, closeMenu }: Props) {
   const { data } = useCategory();
+  const { width } = useWindowSize();
+
+  useEffect(() => {
+    if (width < 1024) {
+      closeMenu();
+    }
+  }, [width, closeMenu]);
 
   return (
     <Modal open={isMenuOpen} closeMenu={closeMenu}>
