@@ -20,7 +20,7 @@ export default function NavActions() {
 
   return (
     <nav className={styles.actions}>
-      <div>
+      <div className={styles.options}>
         <ButtonDropD action={langHandler} isOpen={isLangOpen} fontSize="normal">
           Language
         </ButtonDropD>

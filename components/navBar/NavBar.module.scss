@@ -1,4 +1,5 @@
 @use "../../styles/mixin";
+@import "../../styles/variables";
 
 .container {
   display: flex;
@@ -45,5 +46,22 @@
       border-bottom: 5px solid #d90007;
       font-weight: 700;
     }
+  }
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .links,
+  .container .actions .options {
+    display: none;
+  }
+  .container .actions .action button {
+    height: 2.3rem;
+    padding: 10px 15px;
+    font-size: 0.8rem;
   }
 }
