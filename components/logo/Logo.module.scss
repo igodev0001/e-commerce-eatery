@@ -1,8 +1,10 @@
 @use "../../styles/mixin";
+@import "../../styles/variables";
 
 .container {
   @include mixin.flex_center;
   margin: 0 3.2rem 0 0;
+  z-index: 7;
 }
 
 .largeSize {
@@ -16,4 +18,13 @@
 
 .smallSize {
   width: 30px;
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .container {
+    margin-right: 1rem;
+  }
+  .largeSize {
+    width: 45px;
+  }
 }

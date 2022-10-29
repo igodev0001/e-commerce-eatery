@@ -1,8 +1,10 @@
 @use "../../styles/mixin";
+@import "../../styles/variables";
 
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 1.5rem;
   padding-inline: 0.5rem;
   flex: 1;
@@ -12,16 +14,21 @@
   .actions {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 14px;
-    div {
+    .options {
       @include mixin.flex_center;
       gap: 2.5rem;
+      z-index: 7;
     }
     span {
       @include mixin.flex_center;
     }
     .action {
+      @include mixin.flex_center;
+      gap: 2.5rem;
       padding-inline: 1rem;
+      z-index: 7;
     }
   }
 
@@ -38,6 +45,7 @@
       li {
         padding-bottom: 0.7rem;
         cursor: pointer;
+        z-index: 7;
       }
     }
 
@@ -45,5 +53,17 @@
       border-bottom: 5px solid #d90007;
       font-weight: 700;
     }
+  }
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .links,
+  .container .actions .options {
+    display: none;
+  }
+  .container .actions .action button {
+    height: 2.3rem;
+    padding: 10px 15px;
+    font-size: 0.8rem;
   }
 }

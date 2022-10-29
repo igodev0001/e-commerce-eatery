@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.burgerMenu {
+  display: none;
+  font-size: 1.4rem;
+  color: #292929;
+  background: inherit;
+  border: none;
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .burgerMenu {
+    display: block;
+  }
+}
