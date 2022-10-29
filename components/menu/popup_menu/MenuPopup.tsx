@@ -9,13 +9,14 @@ import styles from "./PopupMenu.module.scss";
 
 interface Props {
   isMenuOpen: boolean;
+  closeMenu: () => void;
 }
 
-export default function MenuPopup({ isMenuOpen }: Props) {
+export default function MenuPopup({ isMenuOpen, closeMenu }: Props) {
   const { data } = useCategory();
 
   return (
-    <Modal open={isMenuOpen}>
+    <Modal open={isMenuOpen} closeMenu={closeMenu}>
       <div className={styles.wrapper}>
         <MenuList categories={data} />
         <LinkButton

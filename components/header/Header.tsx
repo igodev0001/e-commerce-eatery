@@ -18,16 +18,20 @@ export default function Header() {
     }
   }, [router.pathname]);
 
-  function menuHandler() {
+  function toggleMenu() {
     setIsMenuOpen((prev) => !prev);
+  }
+
+  function closeMenu() {
+    setIsMenuOpen(false);
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <Logo size="l" />
-        <NavBar isMenuOpen={isMenuOpen} toggleMenu={menuHandler} />
-        <MenuPopup isMenuOpen={isMenuOpen} />
+        <NavBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <MenuPopup isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
       </div>
     </div>
   );

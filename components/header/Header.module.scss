@@ -3,7 +3,7 @@
 
 .container {
   @include mixin.flex_center;
-  height: 8rem;
+  min-height: 8rem;
   padding-top: 1rem;
   border-bottom: 1px solid rgba(230, 230, 230, 0.751);
   box-shadow: 0 0 5px rgb(230, 230, 230, 0.751);
@@ -17,11 +17,11 @@
 
 @media (max-width: $breakpoint_tablet) {
   .container {
-    padding-top: 0;
-
-    height: 3rem;
+    padding-top: 0rem;
+    min-height: 3rem;
+    align-items: center;
   }
   .wrapper {
-    align-items: center;
+    align-items: baseline;
   }
 }
