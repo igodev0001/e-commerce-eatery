@@ -1,5 +1,5 @@
 @use "../../styles/mixin";
-@import "../../styles/variables";
+@import "../../styles/responsive";
 
 .container {
   @include mixin.flex_center;

@@ -1,5 +1,5 @@
 @use "../../styles/mixin";
-@import "../../styles/variables";
+@import "../../styles/responsive";
 
 .container {
   @include mixin.flex_center;
@@ -23,5 +23,12 @@
   }
   .wrapper {
     align-items: baseline;
+  }
+}
+
+@media (max-width: $breakpoint_smallTablet) {
+  .container {
+  }
+  .wrapper {
   }
 }
