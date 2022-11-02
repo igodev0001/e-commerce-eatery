@@ -7,16 +7,6 @@
   align-items: center;
 }
 
-.menuItem {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem;
-  width: 300px;
-  cursor: pointer;
-}
-
 .listPopUp {
   width: 100%;
   height: 350px;
@@ -28,9 +18,32 @@
   margin: 3rem 0 1.5rem;
 }
 .listBurger {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   margin-block: 2rem;
+  gap: 0.2rem;
+}
+
+.itemPopUp {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 300px;
+  cursor: pointer;
+}
+
+.itemBurger {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 1rem;
+  width: 300px;
+  cursor: pointer;
 }

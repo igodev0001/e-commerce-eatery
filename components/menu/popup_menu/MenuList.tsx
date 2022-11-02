@@ -10,11 +10,11 @@ interface Props {
 export default function MenuList({ categories, form }: Props) {
   const listClass = form === "popUp" ? "listPopUp" : "listBurger";
   return (
-    <ul className={` ${styles[listClass]}`}>
+    <ul className={styles[listClass]}>
       {categories.map(
         (item) =>
           item.name !== "Favorites" && (
-            <MenuItem key={item.id} category={item} />
+            <MenuItem key={item.id} category={item} form={form} />
           )
       )}
     </ul>

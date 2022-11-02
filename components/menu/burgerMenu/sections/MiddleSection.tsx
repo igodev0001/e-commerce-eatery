@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./Sections.module.scss";
 import MenuList from "../../popup_menu/MenuList";
 import useCategory from "../../../../hooks/useCategory";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 export default function MiddleSection() {
   const [isShow, setIsShow] = useState(false);
@@ -14,9 +15,13 @@ export default function MiddleSection() {
 
   return (
     <nav className={styles.middle}>
-      <ul>
+      <ul className={styles.burgerMenuList}>
         <li>
-          <button onClick={menuHandle}>Our Menu</button>
+          <button onClick={menuHandle} className={styles.ourMenu}>
+            <span>Our Menu</span>
+            <span>{isShow ? <AiOutlineMinus /> : <AiOutlinePlus />}</span>
+          </button>
+
           <div>{isShow && <MenuList categories={data} form="burger" />}</div>
         </li>
         <li>

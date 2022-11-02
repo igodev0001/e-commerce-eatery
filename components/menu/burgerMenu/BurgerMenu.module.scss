@@ -1,4 +1,8 @@
 .wrapper {
-  padding-block: 2rem;
+  padding-block: 3rem 2rem;
   padding-inline: 4rem 1rem;
+  font-weight: 300;
+  hr {
+    border-color: rgba(255, 255, 255, 0.338);
+  }
 }
