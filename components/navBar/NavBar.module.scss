@@ -60,9 +60,15 @@
   .container .actions .options {
     display: none;
   }
+  .container .actions {
+    justify-content: flex-end;
+  }
   .container .actions .action button {
     height: 2.3rem;
     padding: 10px 15px;
     font-size: 0.8rem;
+  }
+  .action {
+    justify-content: flex-end;
   }
 }

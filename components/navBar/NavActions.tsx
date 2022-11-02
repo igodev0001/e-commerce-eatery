@@ -2,17 +2,12 @@ import React, { useState } from "react";
 //======================================================
 import Button from "../Button/Button";
 import ButtonDropD from "../Button/ButtonDropD";
-import BurgerMenuIcon from "../Icons/BurgerMenuIcon";
 import SearchBar from "../searchBar/SearchBar";
 //======================================================
 import styles from "./NavBar.module.scss";
 //======================================================
 
-interface Props {
-  burgerHandler: () => void;
-}
-
-export default function NavActions({ burgerHandler }: Props) {
+export default function NavActions() {
   const [isLangOpen, setIsLangOpen] = useState<boolean>(false);
 
   function langHandler(): void {
@@ -25,7 +20,6 @@ export default function NavActions({ burgerHandler }: Props) {
 
   return (
     <nav className={styles.actions}>
-      <BurgerMenuIcon burgerHandler={burgerHandler} />
       <div className={styles.options}>
         <ButtonDropD action={langHandler} isOpen={isLangOpen} fontSize="normal">
           Language

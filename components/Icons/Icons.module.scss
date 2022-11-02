@@ -6,6 +6,8 @@
   color: #292929;
   background: inherit;
   border: none;
+  justify-self: start;
+  cursor: pointer;
 }
 
 @media (max-width: $breakpoint_tablet) {
