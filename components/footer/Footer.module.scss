@@ -1,11 +1,12 @@
 @import "../../styles/mixin";
+@import "../../styles/responsive";
 
 .container {
   @include flex_center;
   padding-top: 1rem;
 }
 .wrapper {
-  width: 70rem;
+  max-width: 70rem;
   padding: 1rem;
 }
 
@@ -82,5 +83,11 @@
       max-width: 300px;
       text-align: right;
     }
+  }
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .container {
+    display: none;
   }
 }

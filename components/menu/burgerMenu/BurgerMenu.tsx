@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import useWindowSize from "../../../hooks/useWindowSize";
 import Modal from "../../modal/Modal";
+import BottomSection from "./sections/BottomSection";
 import styles from "./BurgerMenu.module.scss";
+import MiddleSection from "./sections/MiddleSection";
+import TopSection from "./sections/TopSection";
 
 interface Props {
   show: boolean;
@@ -20,11 +23,12 @@ export default function BurgerMenu({ show, closeMenu }: Props) {
   return (
     <Modal open={show} closeMenu={closeMenu}>
       <div className={styles.wrapper}>
-        <div>rock</div>
-        <div>rock</div>
-        <div>rock</div>
-        <div>rock</div>
-        <div>rock</div>
+        <TopSection />
+        <hr />
+        <MiddleSection />
+        <hr />
+        <BottomSection />
+        <hr />
       </div>
     </Modal>
   );

@@ -27,7 +27,7 @@ export default function MenuPopup({ isMenuOpen, closeMenu }: Props) {
   return (
     <Modal open={isMenuOpen} closeMenu={closeMenu}>
       <div className={styles.wrapper}>
-        <MenuList categories={data} />
+        <MenuList categories={data} form="popUp" />
         <LinkButton
           href="/full_menu"
           name="View Full Menu"

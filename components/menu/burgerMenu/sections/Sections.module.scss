@@ -1,0 +1,46 @@
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: #292929;
+  margin-bottom: 2rem;
+}
+
+.middle {
+  margin-block: 2rem;
+  // font-weight: 400;
+  .burgerMenuList {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    color: #292929;
+    > li {
+      width: 100%;
+    }
+  }
+  .ourMenu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+
+    :nth-child(2) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.bot {
+  margin-block: 2rem;
+  font-size: 0.9rem;
+  color: #292929;
+}

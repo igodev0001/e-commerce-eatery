@@ -1,6 +1,13 @@
+@import "../../styles/responsive";
+
 .main {
   padding-top: 6rem;
   max-width: 75rem;
   margin-inline: auto;
   padding-inline: 1rem;
+}
+
+@media (max-width: $breakpoint_smallTablet) {
+  .main {
+  }
 }

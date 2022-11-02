@@ -7,19 +7,21 @@ import styles from "./PopupMenu.module.scss";
 
 interface Props {
   category: Category;
+  form: string;
 }
 
-export default function MenuItems({ category }: Props) {
+export default function MenuItems({ category, form }: Props) {
   const route = category.name.toLowerCase().split(" ").join("-");
+  const itemClass = form === "popUp" ? "itemPopUp" : "itemBurger";
 
   return (
     <Link href={`/full_menu/${route}`}>
-      <li className={styles.menuItem}>
+      <li className={styles[itemClass]}>
         <Image
           src={category.image}
           alt={category.name}
-          width="78px"
-          height="78px"
+          width={form === "popUp" ? "78px" : "60px"}
+          height={form === "popUp" ? "78px" : "60px"}
         />
         <span>{category.name}</span>
       </li>
