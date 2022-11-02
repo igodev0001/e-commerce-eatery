@@ -24,6 +24,7 @@ export default function NavBar({ isMenuOpen, toggleMenu }: Props) {
     <div className={styles.container}>
       <NavActions burgerHandler={burgerHandler} />
       <NavLinks isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      {/* Burger menu only works on small screens */}
       <BurgerMenu show={burgerOpen} closeMenu={closeBurger} />
     </div>
   );
