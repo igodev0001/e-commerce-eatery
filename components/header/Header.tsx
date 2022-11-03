@@ -19,6 +19,7 @@ export default function Header() {
   useEffect(() => {
     if (router.pathname) {
       setIsMenuOpen(false);
+      setIsBurgerOpen(false);
     }
   }, [router.pathname]);
 
