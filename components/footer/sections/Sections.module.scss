@@ -7,11 +7,7 @@
   h4 {
     margin: 0 0 1.5rem;
   }
-  // .footerList {
-  //   display: flex;
-  //   padding: 0;
-  //   justify-content: space-around;
-  // }
+
   .item {
     @include flex_column;
     .footerList {
@@ -45,7 +41,7 @@
   display: flex;
   justify-content: space-between;
 
-  .left {
+  .social_media {
     @include flex_center;
     gap: 1rem;
 
@@ -59,7 +55,7 @@
     }
   }
 
-  .right {
+  .download_link {
     @include flex_center;
     gap: 1.5rem;
     div {
@@ -90,20 +86,22 @@
 }
 
 @media (max-width: $breakpoint_tablet) {
-  .middle {
-    flex-direction: column;
-  }
-
   .top {
     flex-direction: column;
     gap: 1rem;
-    // .item {
-    //   margin-bottom: 1.5rem;
-    // }
+
     .title {
       button {
         display: inline;
       }
+    }
+  }
+
+  .middle {
+    flex-direction: column;
+    gap: 2rem;
+    .download_link {
+      gap: 6rem;
     }
   }
 

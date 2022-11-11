@@ -14,7 +14,7 @@ import appStore from "../../../public/images/appStore.png";
 export default function MiddleSection() {
   return (
     <div className={styles.middle}>
-      <div className={styles.left}>
+      <div className={styles.social_media}>
         <div>
           <FaFacebookF />
         </div>
@@ -35,7 +35,7 @@ export default function MiddleSection() {
           <FaSpotify />
         </div>
       </div>
-      <div className={styles.right}>
+      <div className={styles.download_link}>
         <div>
           <Image src={appStore} alt="google play" />
         </div>
