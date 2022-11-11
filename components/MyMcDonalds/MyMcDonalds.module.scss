@@ -1,3 +1,5 @@
+@import "../../styles/responsive";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -21,5 +23,17 @@
     font-size: 2rem;
     color: #292929;
     margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: $breakpoint_smallTablet) {
+  .container {
+    font-size: 0.8rem;
+    h1 {
+      font-size: 2.2rem;
+    }
+    .feed {
+      margin-top: 3rem;
+    }
   }
 }
