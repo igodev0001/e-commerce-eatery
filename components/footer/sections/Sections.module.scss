@@ -1,4 +1,5 @@
 @import "../../../styles/mixin";
+@import "../../../styles/responsive";
 
 .top {
   @include footer_flex;
@@ -6,19 +7,32 @@
   h4 {
     margin: 0 0 1.5rem;
   }
-  ul {
-    display: flex;
-    padding: 0;
-    justify-content: space-around;
-  }
-  > div {
+
+  .item {
     @include flex_column;
-    ul {
+    .footerList {
       @include flex_column;
       list-style: none;
       gap: 0.8rem;
       font-size: 14px;
       max-width: 200px;
+      margin-block: 1.5rem;
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    h4 {
+      margin: 0;
+    }
+    button {
+      display: none;
+      background-color: transparent;
+      border: none;
+      font-size: 1.3rem;
     }
   }
 }
@@ -27,7 +41,7 @@
   display: flex;
   justify-content: space-between;
 
-  .left {
+  .social_media {
     @include flex_center;
     gap: 1rem;
 
@@ -41,7 +55,7 @@
     }
   }
 
-  .right {
+  .download_link {
     @include flex_center;
     gap: 1.5rem;
     div {
@@ -59,14 +73,69 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2rem;
-    flex: 1;
+    flex: 2;
+    flex-wrap: wrap;
+  }
+  .logo_rights {
+    display: flex;
+    justify-content: flex-end;
   }
   .logo {
     @include flex_center;
     align-items: flex-start;
   }
   .rights {
-    max-width: 300px;
+    width: 70%;
     text-align: right;
+  }
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .top {
+    flex-direction: column;
+    gap: 1rem;
+
+    .title {
+      button {
+        display: inline;
+      }
+    }
+  }
+
+  .middle {
+    flex-direction: column;
+    gap: 2rem;
+    .download_link {
+      gap: 6rem;
+    }
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    .terms {
+      justify-content: center;
+      gap: 1rem;
+    }
+    .logo_rights {
+      justify-content: center;
+      .rights {
+        width: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint_smallPhone) {
+  .middle {
+    .social_media {
+      flex-wrap: wrap;
+    }
+    .download_link {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 }

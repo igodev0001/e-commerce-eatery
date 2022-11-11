@@ -10,11 +10,13 @@ export default function BottomSection() {
         <span>Terms & Conditions</span>
         <span>Digital Accessibility</span>
       </div>
-      <div className={styles.logo}>
-        <Logo size="s" />
-      </div>
-      <div className={styles.rights}>
-        {"© 2017 - 2022 McDonald's. All Rights Reserved"}
+      <div className={styles.logo_rights}>
+        <div className={styles.logo}>
+          <Logo size="s" />
+        </div>
+        <div className={styles.rights}>
+          {"© 2017 - 2022 McDonald's. All Rights Reserved"}
+        </div>
       </div>
     </div>
   );
