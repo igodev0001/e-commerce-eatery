@@ -3,15 +3,16 @@
 .burgerMenu {
   display: none;
   font-size: 1.4rem;
-  color: #292929;
+  color: #292929ce;
   background: inherit;
   border: none;
-  justify-self: start;
+  // justify-self: start;
   cursor: pointer;
 }
 
 @media (max-width: $breakpoint_tablet) {
   .burgerMenu {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }

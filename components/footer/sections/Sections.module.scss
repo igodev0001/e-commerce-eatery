@@ -127,3 +127,15 @@
     }
   }
 }
+
+@media (max-width: $breakpoint_smallPhone) {
+  .middle {
+    .social_media {
+      flex-wrap: wrap;
+    }
+    .download_link {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}
