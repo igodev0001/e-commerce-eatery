@@ -1,3 +1,5 @@
+@import "../../styles/responsive";
+
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -20,5 +22,21 @@
   }
   span {
     font-size: 0.6rem;
+  }
+}
+
+@media (max-width: $breakpoint_smallTablet) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin: 5rem 0;
+    .item {
+      h2 {
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
   }
 }
