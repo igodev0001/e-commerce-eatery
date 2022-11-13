@@ -37,6 +37,15 @@
       font-size: 1.3rem;
     }
   }
+
+  .drawer {
+    margin-top: 2rem;
+    > div {
+      font-size: 0.8rem;
+      width: 170px;
+      padding: 0;
+    }
+  }
 }
 
 .bot {
