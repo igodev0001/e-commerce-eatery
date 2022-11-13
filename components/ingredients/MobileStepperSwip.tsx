@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
 import Paper from "@mui/material/Paper";
@@ -16,6 +16,7 @@ interface Props {
 
 export default function MobileStepperSwip({ ingredients }: Props) {
   const theme = useTheme();
+
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = ingredients.length;
 
@@ -26,10 +27,6 @@ export default function MobileStepperSwip({ ingredients }: Props) {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
-  //   const handleStepChange = (step: number) => {
-  //     setActiveStep(step);
-  //   };
 
   return (
     <Box
@@ -51,9 +48,7 @@ export default function MobileStepperSwip({ ingredients }: Props) {
           pl: 2,
           bgcolor: "background.default",
         }}
-      >
-        <Typography>{ingredients[activeStep].name}</Typography>
-      </Paper>
+      ></Paper>
 
       {ingredients.map((ingredient, index) => (
         <div
@@ -80,33 +75,45 @@ export default function MobileStepperSwip({ ingredients }: Props) {
           ) : null}
         </div>
       ))}
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-          </Button>
-        }
-      />
+      <Typography style={{ marginTop: "1rem" }}>
+        {ingredients[activeStep].name}
+      </Typography>
+      <ThemeProvider theme={theme}>
+        <MobileStepper
+          steps={maxSteps}
+          style={{ display: "flex", gap: "5rem" }}
+          position="static"
+          activeStep={activeStep}
+          nextButton={
+            <Button
+              size="small"
+              onClick={handleNext}
+              disabled={activeStep === maxSteps - 1}
+              style={{ color: "black" }}
+            >
+              {theme.direction === "rtl" ? (
+                <KeyboardArrowLeft />
+              ) : (
+                <KeyboardArrowRight />
+              )}
+            </Button>
+          }
+          backButton={
+            <Button
+              size="small"
+              onClick={handleBack}
+              disabled={activeStep === 0}
+              style={{ color: "black" }}
+            >
+              {theme.direction === "rtl" ? (
+                <KeyboardArrowRight />
+              ) : (
+                <KeyboardArrowLeft />
+              )}
+            </Button>
+          }
+        />
+      </ThemeProvider>
     </Box>
   );
 }
