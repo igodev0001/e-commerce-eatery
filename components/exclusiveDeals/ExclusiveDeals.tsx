@@ -19,17 +19,19 @@ export default function ExclusiveDeals({ feed }: Feeds) {
         )}
 
         <FeedHalfContainer feed={halfFeedLink} />
-        {wideFeed.map(
-          (item, index) =>
-            index !== 0 && (
-              <FeedWide
-                key={item.id}
-                feed={item}
-                width="339.8px"
-                height="227.7px"
-              />
-            )
-        )}
+        <div className={styles.smallFeed}>
+          {wideFeed.map(
+            (item, index) =>
+              index !== 0 && (
+                <FeedWide
+                  key={item.id}
+                  feed={item}
+                  width="339.8px"
+                  height="227.7px"
+                />
+              )
+          )}
+        </div>
       </div>
     </div>
   );

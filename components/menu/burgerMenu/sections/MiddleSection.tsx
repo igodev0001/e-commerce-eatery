@@ -4,6 +4,7 @@ import styles from "./Sections.module.scss";
 import MenuList from "../../popup_menu/MenuList";
 import useCategory from "../../../../hooks/useCategory";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import LinkButton from "../../../Button/LinkButton";
 
 export default function MiddleSection() {
   const [isShow, setIsShow] = useState(false);
@@ -22,7 +23,16 @@ export default function MiddleSection() {
             <span>{isShow ? <AiOutlineMinus /> : <AiOutlinePlus />}</span>
           </button>
 
-          <div>{isShow && <MenuList categories={data} form="burger" />}</div>
+          {isShow && (
+            <div className={styles.drawer}>
+              <LinkButton
+                href="/full_menu"
+                name="View Full Menu"
+                style="transparent"
+              />
+              <MenuList categories={data} form="burger" />
+            </div>
+          )}
         </li>
         <li>
           <Link href="/download_app">Download App</Link>

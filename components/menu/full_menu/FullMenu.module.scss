@@ -1,3 +1,5 @@
+@import "../../../styles/responsive";
+
 .container {
   .parag {
     margin-block: 8rem 5rem;
@@ -61,12 +63,13 @@
     font-size: 3rem;
     font-weight: 800;
     color: #292929;
+    margin-bottom: 3rem;
   }
   h2 {
     font-size: 2rem;
     font-weight: 800;
     color: #292929;
-    margin-block: 3rem 5rem;
+    margin-bottom: 5rem;
   }
 
   .grid {
@@ -89,5 +92,41 @@
     font-size: 1.2rem;
     gap: 1rem;
     cursor: pointer;
+  }
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .sideMenu {
+    display: none;
+  }
+  .topDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menuGrid {
+    width: 100%;
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .grid {
+      grid-template-columns: auto auto auto;
+    }
+  }
+}
+
+@media (max-width: $breakpoint_smallTablet) {
+  .menuGrid {
+    .grid {
+      grid-template-columns: auto auto;
+    }
+    .item {
+      width: 150px;
+      font-size: 0.8rem;
+    }
   }
 }

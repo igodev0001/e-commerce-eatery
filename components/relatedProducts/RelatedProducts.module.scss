@@ -1,3 +1,5 @@
+@import "../../styles/responsive";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -37,6 +39,35 @@
       font-size: 1.2rem;
       color: #292929;
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .container {
+    margin-inline: -1rem;
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .grid {
+      grid-template-columns: 100%;
+      gap: 1rem;
+
+      .item {
+        text-align: center;
+        width: 300px;
+        height: 200px;
+        gap: 1rem;
+        padding: 25px 30px;
+
+        .img {
+          width: 50%;
+        }
+        .name {
+          font-size: 1rem;
+        }
+      }
     }
   }
 }
