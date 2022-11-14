@@ -3,22 +3,27 @@ import Link from "next/link";
 //======================================================
 import MenuGrid from "./MenuGrid";
 import SideMenu from "./SideMenu";
-import useCategory from "../../../hooks/useCategory";
+// import useCategory from "../../../hooks/useCategory";
 //======================================================
-import { Products, Category } from "../../../lib/types";
+import { Category, Product } from "../../../lib/types";
 import styles from "./FullMenu.module.scss";
 //======================================================
 
-export default function FullMenu({ products }: Products) {
+interface Props {
+  products: Product[];
+  categories: Category[];
+}
+
+export default function FullMenu({ products, categories }: Props) {
   const router = useRouter();
-  const { data } = useCategory();
+  // const { data } = useCategory();
 
   const FavoriteProducts = products?.filter((item) => item.favorite);
 
   return (
     <div className={styles.container}>
       <div className={styles.topDiv}>
-        {data && <SideMenu categories={data} />}
+        {categories && <SideMenu categories={categories} />}
         {router.pathname === "/full_menu" ? (
           <MenuGrid
             products={FavoriteProducts}
@@ -36,9 +41,9 @@ export default function FullMenu({ products }: Products) {
 
       {router.pathname === "/full_menu" && (
         <div className={styles.botDiv}>
-          {data &&
+          {categories &&
             router.pathname === "/full_menu" &&
-            data.map(
+            categories.map(
               (cat: Category) =>
                 cat.name !== "Favorites" && (
                   <MenuGrid
