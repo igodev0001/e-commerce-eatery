@@ -14,11 +14,12 @@ export default function RelatedProducts({ categoryId, pId }: Props) {
 
   const relatedCategory = categories?.filter((item) => item.id === categoryId);
 
-  const relatedItems = relatedCategory[0].products
-    ?.filter((item) => item.id !== pId)
-    .filter((item, index) => index < 4);
+  const relatedItems =
+    relatedCategory &&
+    relatedCategory[0].products
+      ?.filter((item) => item.id !== pId)
+      .filter((item, index) => index < 4);
 
-  console.log(relatedItems);
   return (
     <div className={styles.container}>
       <h2>Related Products</h2>
