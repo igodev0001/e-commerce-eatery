@@ -1,3 +1,5 @@
+@import "../../styles/responsive";
+
 .container {
   margin-bottom: 7rem;
 }
@@ -5,9 +7,12 @@
 .input {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 4rem;
   .field {
     display: flex;
+    align-items: center;
+
     flex: 1;
     button {
       position: relative;
@@ -26,6 +31,27 @@
       font-size: 0.9rem;
       color: #292929;
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: $breakpoint_smallTablet) {
+  .input {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    .field {
+      width: 100%;
+      button {
+        position: static;
+        padding: 1rem;
+      }
+    }
+    .locate_me {
+      button {
+        padding: 14px 18px;
+      }
     }
   }
 }

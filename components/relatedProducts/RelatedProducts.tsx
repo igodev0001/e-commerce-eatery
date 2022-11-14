@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import RelatedGrid from "./RelatedGrid";
 import styles from "./RelatedProducts.module.scss";
-import { Product } from "../../lib/types";
+import { Category } from "../../lib/types";
 //======================================================
 interface Props {
   categoryId: number;
@@ -10,13 +10,16 @@ interface Props {
 
 export default function RelatedProducts({ categoryId, pId }: Props) {
   const query = useQueryClient();
-  const allProducts = query.getQueryData(["products"]) as Product[];
+  const categories = query.getQueryData(["categories"]) as Category[];
 
-  const relatedItems = allProducts
-    ?.filter((item) => item.category_id === categoryId && item.id !== pId)
-    .filter((item, index) => index < 4);
+  const relatedCategory = categories?.filter((item) => item.id === categoryId);
 
-  console.log(relatedItems);
+  const relatedItems =
+    relatedCategory &&
+    relatedCategory[0].products
+      ?.filter((item) => item.id !== pId)
+      .filter((item, index) => index < 4);
+
   return (
     <div className={styles.container}>
       <h2>Related Products</h2>

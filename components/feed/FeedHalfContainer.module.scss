@@ -1,7 +1,18 @@
+@import "../../styles/responsive";
+
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin: 7rem 0;
   row-gap: 7rem;
+}
+
+@media (max-width: $breakpoint_smallTablet) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
 }

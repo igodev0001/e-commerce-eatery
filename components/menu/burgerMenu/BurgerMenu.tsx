@@ -5,6 +5,7 @@ import BottomSection from "./sections/BottomSection";
 import styles from "./BurgerMenu.module.scss";
 import MiddleSection from "./sections/MiddleSection";
 import TopSection from "./sections/TopSection";
+import { AiOutlineClose } from "react-icons/ai";
 
 interface Props {
   show: boolean;
@@ -22,6 +23,11 @@ export default function BurgerMenu({ show, closeMenu }: Props) {
 
   return (
     <Modal open={show} closeMenu={closeMenu}>
+      <div className={styles.action}>
+        <button onClick={closeMenu}>
+          <AiOutlineClose />
+        </button>
+      </div>
       <div className={styles.wrapper}>
         <TopSection />
         <hr />

@@ -1,0 +1,141 @@
+@import "../../../styles/mixin";
+@import "../../../styles/responsive";
+
+.top {
+  @include footer_flex;
+  margin-bottom: 3rem;
+  h4 {
+    margin: 0 0 1.5rem;
+  }
+
+  .item {
+    @include flex_column;
+    .footerList {
+      @include flex_column;
+      list-style: none;
+      gap: 0.8rem;
+      font-size: 14px;
+      max-width: 200px;
+      margin-block: 1.5rem;
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    h4 {
+      margin: 0;
+    }
+    button {
+      display: none;
+      background-color: transparent;
+      border: none;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.middle {
+  display: flex;
+  justify-content: space-between;
+
+  .social_media {
+    @include flex_center;
+    gap: 1rem;
+
+    div {
+      @include flex_center;
+      width: 35px;
+      height: 35px;
+      border: 1px solid rgba(168, 166, 166, 0.702);
+      border-radius: 50%;
+      color: rgba(55, 55, 55, 0.922);
+    }
+  }
+
+  .download_link {
+    @include flex_center;
+    gap: 1.5rem;
+    div {
+      width: 130px;
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  .terms {
+    @include flex_center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    flex: 2;
+    flex-wrap: wrap;
+  }
+  .logo_rights {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .logo {
+    @include flex_center;
+    align-items: flex-start;
+  }
+  .rights {
+    width: 70%;
+    text-align: right;
+  }
+}
+
+@media (max-width: $breakpoint_tablet) {
+  .top {
+    flex-direction: column;
+    gap: 1rem;
+
+    .title {
+      button {
+        display: inline;
+      }
+    }
+  }
+
+  .middle {
+    flex-direction: column;
+    gap: 2rem;
+    .download_link {
+      gap: 6rem;
+    }
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    .terms {
+      justify-content: center;
+      gap: 1rem;
+    }
+    .logo_rights {
+      justify-content: center;
+      .rights {
+        width: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint_smallPhone) {
+  .middle {
+    .social_media {
+      flex-wrap: wrap;
+    }
+    .download_link {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}

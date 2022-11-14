@@ -10,7 +10,7 @@
 
 .middle {
   margin-block: 2rem;
-  // font-weight: 400;
+  font-weight: 300;
   .burgerMenuList {
     width: 100%;
     list-style: none;
@@ -35,6 +35,15 @@
 
     :nth-child(2) {
       font-size: 1.3rem;
+    }
+  }
+
+  .drawer {
+    margin-top: 2rem;
+    > div {
+      font-size: 0.8rem;
+      width: 170px;
+      padding: 0;
     }
   }
 }

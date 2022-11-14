@@ -1,3 +1,4 @@
+@import "../../styles/responsive";
 .container {
   display: flex;
   flex-direction: column;
@@ -11,6 +12,7 @@
 
 .banner {
   display: flex;
+  width: 100%;
   gap: 1rem;
   margin: 1rem 0 7rem;
   .info {
@@ -45,6 +47,30 @@
     a {
       color: rgb(44, 62, 223);
       text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: $breakpoint_smallTablet) {
+  .container {
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+    }
+    .banner {
+      flex-direction: column;
+      h2 {
+        font-size: 2rem;
+      }
+    }
+    .desc {
+      margin-bottom: 3rem;
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
     }
   }
 }

@@ -22,14 +22,13 @@
     align-items: center;
   }
   .wrapper {
-    align-items: baseline;
     padding-left: 0.3rem;
   }
 }
 
-@media (max-width: $breakpoint_smallTablet) {
-  .container {
-  }
-  .wrapper {
-  }
-}
+// @media (max-width: $breakpoint_smallTablet) {
+//   .container {
+//   }
+//   .wrapper {
+//   }
+// }
