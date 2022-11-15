@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 import { useRouter } from "next/router";
 //======================================================
 import FullMenu from "../../components/menu/full_menu/FullMenu";
-// import useFetch from "../../hooks/useFetch";
 //======================================================
 import { Category, Product } from "../../lib/types";
 //======================================================
@@ -12,8 +11,6 @@ interface Props {
 }
 
 export default function CatName({ products, categories }: Props) {
-  // const { data } = useFetch("products");
-
   const router = useRouter();
   const { catName } = router.query;
 
@@ -33,7 +30,6 @@ export async function getStaticPaths() {
   const prisma = new PrismaClient();
 
   const categories = await prisma.category.findMany({});
-  // console.log(categories);
   const paths = categories.map((item) => ({
     params: {
       catName: item.name.toString().toLowerCase().split(" ").join("-"),
