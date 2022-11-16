@@ -3,22 +3,25 @@ import Link from "next/link";
 //======================================================
 import MenuGrid from "./MenuGrid";
 import SideMenu from "./SideMenu";
-import useCategory from "../../../hooks/useCategory";
 //======================================================
-import { Products, Category } from "../../../lib/types";
+import { Category, Product } from "../../../lib/types";
 import styles from "./FullMenu.module.scss";
 //======================================================
 
-export default function FullMenu({ products }: Products) {
-  const router = useRouter();
-  const { data } = useCategory();
+interface Props {
+  products: Product[];
+  categories: Category[];
+}
 
-  const FavoriteProducts = products?.filter((item) => item.favorite);
+export default function FullMenu({ products, categories }: Props) {
+  const router = useRouter();
+
+  const FavoriteProducts = products.filter((item) => item.favorite);
 
   return (
     <div className={styles.container}>
       <div className={styles.topDiv}>
-        {data && <SideMenu categories={data} />}
+        <SideMenu categories={categories} />
         {router.pathname === "/full_menu" ? (
           <MenuGrid
             products={FavoriteProducts}
@@ -36,19 +39,17 @@ export default function FullMenu({ products }: Products) {
 
       {router.pathname === "/full_menu" && (
         <div className={styles.botDiv}>
-          {data &&
-            router.pathname === "/full_menu" &&
-            data.map(
-              (cat: Category) =>
-                cat.name !== "Favorites" && (
-                  <MenuGrid
-                    key={cat.id}
-                    column="4"
-                    products={cat.products}
-                    title={cat.name}
-                  />
-                )
-            )}
+          {categories.map(
+            (cat: Category) =>
+              cat.name !== "Favorites" && (
+                <MenuGrid
+                  key={cat.id}
+                  column="4"
+                  products={cat.products}
+                  title={cat.name}
+                />
+              )
+          )}
         </div>
       )}
       <div className={styles.parag}>

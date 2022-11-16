@@ -1,23 +1,61 @@
-import { useRouter } from "next/router";
+import { PrismaClient } from "@prisma/client";
+import { ParsedUrlQuery } from "querystring";
+import { GetStaticPaths, GetStaticProps } from "next";
 //======================================================
 import FullMenu from "../../components/menu/full_menu/FullMenu";
-import useFetch from "../../hooks/useFetch";
 //======================================================
-import { Product } from "../../lib/types";
+import { Category, Product } from "../../lib/types";
 //======================================================
-
-export default function CatName() {
-  const { data } = useFetch("products");
-
-  const router = useRouter();
-  const { catName } = router.query;
-
-  const categoryName = catName?.toString().split("-").join(" ");
-  const dynamicData =
-    catName &&
-    data?.filter(
-      (item: Product) => item.category.name.toLowerCase() === categoryName
-    );
-
-  return dynamicData && <FullMenu products={dynamicData} />;
+interface Props {
+  products: Product[];
+  categories: Category[];
 }
+
+export default function CatName({ products, categories }: Props) {
+  return <FullMenu products={products} categories={categories} />;
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const prisma = new PrismaClient();
+
+  const categories = await prisma.category.findMany({});
+  const paths = categories.map((item) => ({
+    params: {
+      catName: item.name.toString().split(" ").join("-"),
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+interface IParams extends ParsedUrlQuery {
+  catName: string;
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { catName } = context.params as IParams;
+
+  const prisma = new PrismaClient();
+  const categories = await prisma.category.findMany({});
+
+  const catId = categories.find(
+    (item) => item.name === catName.toString().split("-").join(" ")
+  )?.id;
+  const products = await prisma.product.findMany({
+    where: {
+      category_id: catId,
+    },
+    include: {
+      category: true,
+    },
+  });
+
+  return {
+    props: {
+      products: products,
+      categories,
+    },
+  };
+};

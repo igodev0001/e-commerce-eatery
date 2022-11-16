@@ -13,11 +13,11 @@ interface Props {
 export default function SideMenuItem({ category }: Props) {
   const router = useRouter();
   const activeClass =
-    router.query.catName === category.name.toLowerCase() ||
+    router.query.catName === category.name.split(" ").join("-") ||
     (router.pathname === "/full_menu" && category.name === "Favorites")
       ? "activeItem"
       : "";
-  const route = category.name.toLowerCase().split(" ").join("-");
+  const route = category.name.split(" ").join("-");
 
   return (
     <Link

@@ -15,7 +15,6 @@ export default function TopSection() {
   function menuHandle(event: React.MouseEvent<HTMLButtonElement>) {
     const name: string = event.currentTarget.name;
     setIsShow({ ...isShow, [name]: !isShow[name] });
-    console.log(isShow[name]);
   }
 
   return (
