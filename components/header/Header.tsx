@@ -17,11 +17,11 @@ export default function Header() {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.pathname) {
+    if (router.asPath) {
       setIsMenuOpen(false);
       setIsBurgerOpen(false);
     }
-  }, [router.pathname]);
+  }, [router.asPath]);
 
   function toggleMenu() {
     setIsMenuOpen((prev) => !prev);
