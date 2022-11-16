@@ -1,22 +1,17 @@
 import { PrismaClient } from "@prisma/client";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
-
-import { useRouter } from "next/router";
+//======================================================
 import ProductDetail from "../../components/productDetail/ProductDetail";
-import useFetch from "../../hooks/useFetch";
-
+import { Product } from "../../lib/types";
 //======================================================
 
-export default function ProductDetailedPage() {
-  const router = useRouter();
-  const { productName } = router.query;
+interface Props {
+  product: Product;
+}
 
-  const name = productName?.toString().split("-").join(" ");
-
-  const { data } = useFetch(productName ? `products/${name}` : "products");
-
-  return data && <ProductDetail product={data} />;
+export default function ProductDetailedPage({ product }: Props) {
+  return <ProductDetail product={product} />;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -38,23 +33,22 @@ interface IParams extends ParsedUrlQuery {
   productName: string;
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetServerSideProps = async (context) => {
   const { productName } = context.params as IParams;
   const prisma = new PrismaClient();
   const product = await prisma.product.findFirst({
     where: {
-      name: productName,
+      name: productName.toString().split("-").join(" "),
     },
     include: {
       category: true,
+      ingredients: true,
     },
   });
-  const categories = await prisma.category.findMany({});
 
   return {
     props: {
       product,
-      categories,
     },
   };
 };

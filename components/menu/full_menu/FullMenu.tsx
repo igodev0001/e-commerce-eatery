@@ -3,7 +3,6 @@ import Link from "next/link";
 //======================================================
 import MenuGrid from "./MenuGrid";
 import SideMenu from "./SideMenu";
-// import useCategory from "../../../hooks/useCategory";
 //======================================================
 import { Category, Product } from "../../../lib/types";
 import styles from "./FullMenu.module.scss";
@@ -16,14 +15,13 @@ interface Props {
 
 export default function FullMenu({ products, categories }: Props) {
   const router = useRouter();
-  // const { data } = useCategory();
 
-  const FavoriteProducts = products?.filter((item) => item.favorite);
+  const FavoriteProducts = products.filter((item) => item.favorite);
 
   return (
     <div className={styles.container}>
       <div className={styles.topDiv}>
-        {categories && <SideMenu categories={categories} />}
+        <SideMenu categories={categories} />
         {router.pathname === "/full_menu" ? (
           <MenuGrid
             products={FavoriteProducts}
@@ -41,19 +39,17 @@ export default function FullMenu({ products, categories }: Props) {
 
       {router.pathname === "/full_menu" && (
         <div className={styles.botDiv}>
-          {categories &&
-            router.pathname === "/full_menu" &&
-            categories.map(
-              (cat: Category) =>
-                cat.name !== "Favorites" && (
-                  <MenuGrid
-                    key={cat.id}
-                    column="4"
-                    products={cat.products}
-                    title={cat.name}
-                  />
-                )
-            )}
+          {categories.map(
+            (cat: Category) =>
+              cat.name !== "Favorites" && (
+                <MenuGrid
+                  key={cat.id}
+                  column="4"
+                  products={cat.products}
+                  title={cat.name}
+                />
+              )
+          )}
         </div>
       )}
       <div className={styles.parag}>

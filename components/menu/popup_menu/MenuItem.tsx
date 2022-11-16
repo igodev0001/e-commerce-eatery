@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default function MenuItems({ category, form }: Props) {
-  const route = category.name.toLowerCase().split(" ").join("-");
+  const route = category.name.split(" ").join("-");
   const itemClass = form === "popUp" ? "itemPopUp" : "itemBurger";
 
   return (

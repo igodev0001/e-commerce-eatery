@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
-import { useRouter } from "next/router";
+import { ParsedUrlQuery } from "querystring";
+import { GetStaticPaths, GetStaticProps } from "next";
 //======================================================
 import FullMenu from "../../components/menu/full_menu/FullMenu";
 //======================================================
@@ -11,51 +12,50 @@ interface Props {
 }
 
 export default function CatName({ products, categories }: Props) {
-  const router = useRouter();
-  const { catName } = router.query;
-
-  const categoryName = catName?.toString().split("-").join(" ");
-  const dynamicData =
-    catName &&
-    products?.filter(
-      (item: Product) => item.category.name.toLowerCase() === categoryName
-    );
-
-  return (
-    dynamicData && <FullMenu products={dynamicData} categories={categories} />
-  );
+  return <FullMenu products={products} categories={categories} />;
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const prisma = new PrismaClient();
 
   const categories = await prisma.category.findMany({});
   const paths = categories.map((item) => ({
     params: {
-      catName: item.name.toString().toLowerCase().split(" ").join("-"),
+      catName: item.name.toString().split(" ").join("-"),
     },
   }));
+
   return {
     paths,
     fallback: false,
   };
+};
+interface IParams extends ParsedUrlQuery {
+  catName: string;
 }
-// interface Params {
-//   params: { catName: string }[];
-// }
-export async function getStaticProps() {
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { catName } = context.params as IParams;
+
   const prisma = new PrismaClient();
+  const categories = await prisma.category.findMany({});
+
+  const catId = categories.find(
+    (item) => item.name === catName.toString().split("-").join(" ")
+  )?.id;
   const products = await prisma.product.findMany({
+    where: {
+      category_id: catId,
+    },
     include: {
       category: true,
     },
   });
-  const categories = await prisma.category.findMany({});
 
   return {
     props: {
-      products,
+      products: products,
       categories,
     },
   };
-}
+};
