@@ -24,6 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       catName: item.name.toString().split(" ").join("-"),
     },
   }));
+  await prisma.$disconnect();
 
   return {
     paths,
@@ -51,6 +52,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       category: true,
     },
   });
+  await prisma.$disconnect();
 
   return {
     props: {

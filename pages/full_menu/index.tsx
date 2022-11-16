@@ -20,6 +20,7 @@ export async function getStaticProps() {
       products: true,
     },
   });
+  await prisma.$disconnect();
 
   return {
     props: {

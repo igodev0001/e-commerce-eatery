@@ -23,6 +23,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
       productName: item.name.toString().split(" ").join("-"),
     },
   }));
+  await prisma.$disconnect();
+
   return {
     paths,
     fallback: false,
@@ -45,6 +47,7 @@ export const getStaticProps: GetServerSideProps = async (context) => {
       ingredients: true,
     },
   });
+  await prisma.$disconnect();
 
   return {
     props: {
