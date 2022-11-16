@@ -11,7 +11,6 @@ interface Props {
 }
 
 export default function ProductDetail({ product }: Props) {
-  console.log(product);
   return (
     <div className={styles.container}>
       <ProductInfo product={product} />
