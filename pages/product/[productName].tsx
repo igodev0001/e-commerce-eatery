@@ -14,28 +14,28 @@ export default function ProductDetailedPage({ product }: Props) {
   return <ProductDetail product={product} />;
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const prisma = new PrismaClient();
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const prisma = new PrismaClient();
 
-  const products = await prisma.product.findMany({});
-  const paths = products.map((item) => ({
-    params: {
-      productName: item.name.toString().split(" ").join("-"),
-    },
-  }));
-  await prisma.$disconnect();
+//   const products = await prisma.product.findMany({});
+//   const paths = products.map((item) => ({
+//     params: {
+//       productName: item.name.toString().split(" ").join("-"),
+//     },
+//   }));
+//   await prisma.$disconnect();
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
 interface IParams extends ParsedUrlQuery {
   productName: string;
 }
 
-export const getStaticProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { productName } = context.params as IParams;
   const prisma = new PrismaClient();
   const product = await prisma.product.findFirst({
