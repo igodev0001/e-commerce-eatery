@@ -13,6 +13,10 @@ This project uses the following technologies:
 - Sass
 - Mui
 
+## Images
+
+/public/images/home.jpg
+
 ## Description
 
 Almost all pages use _getStaticProps_ with no revalidation, except **productDetail** page which uses _getServerSideProps_ to be able to react to any instant changes on the server or database.
