@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 //======================================================
 import ProductDetail from "../../components/productDetail/ProductDetail";
@@ -13,23 +13,6 @@ interface Props {
 export default function ProductDetailedPage({ product }: Props) {
   return <ProductDetail product={product} />;
 }
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const prisma = new PrismaClient();
-
-//   const products = await prisma.product.findMany({});
-//   const paths = products.map((item) => ({
-//     params: {
-//       productName: item.name.toString().split(" ").join("-"),
-//     },
-//   }));
-//   await prisma.$disconnect();
-
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
 
 interface IParams extends ParsedUrlQuery {
   productName: string;

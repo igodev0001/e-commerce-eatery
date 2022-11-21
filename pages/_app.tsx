@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Eatary</title>
+        <title>McDonald Eatary</title>
         <meta
           name="description"
           content="This is a desription for My Next App"
