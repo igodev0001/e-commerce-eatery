@@ -16,6 +16,7 @@ This project uses the following technologies:
 ## Images
 
 i[Home page](/public/images/homepage.png)
+<img src='/public/images/homepage.png' alt='homepage' width='480'/>
 
 ## Description
 
