@@ -15,8 +15,10 @@ This project uses the following technologies:
 
 ## Images
 
-i[Home page](/public/images/homepage.png)
 <img src='/public/images/homepage.png' alt='homepage' width='480'/>
+<img src='/public/images/menu.png' alt='menu' width='480'/>
+<img src='/public/images/productDetail.png' alt='productDetail' width='480'/>
+<img src='/public/images/ingredients.png' alt='ingredients' width='480'/>
 
 ## Description
 
