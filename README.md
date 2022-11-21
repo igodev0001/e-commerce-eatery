@@ -1,4 +1,5 @@
-This is a [Next.js] project bootstrapped with [`create-next-app`]. The Point of building this application is to clone **McDonald**'s website including it's database.
+This is a [Next.js] project bootstrapped with [`create-next-app`]. <br />
+The Point of building this application is to clone **McDonald**'s website including it's database.<br />
 Original website ====> https://www.mcdonalds.com/us/en-us.html
 
 ## Tech Stack
@@ -22,7 +23,7 @@ This project uses the following technologies:
 
 ## Description
 
-Almost all pages use _getStaticProps_ with no revalidation, except **productDetail** page which uses _getServerSideProps_ to be able to react to any instant changes on the server or database.
+Almost all pages use _getStaticProps_ with no revalidation, except **productDetail** page which uses _getServerSideProps_ to be able to react to any instant changes on the server or database. <br />
 The **productDetail** page is now kind of static and it's not necessary to use _getServerSideProps_, but I added it in case of having users, cart page, buying process and a limited number of products in the stack.
 
 # Getting Started
