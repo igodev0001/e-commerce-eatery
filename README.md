@@ -15,7 +15,7 @@ This project uses the following technologies:
 
 ## Images
 
-i[Home page](/public/images/home.jpg)
+i[Home page](/public/images/homepage.png)
 
 ## Description
 
