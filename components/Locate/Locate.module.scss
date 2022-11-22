@@ -12,8 +12,8 @@
   .field {
     display: flex;
     align-items: center;
-
     flex: 1;
+
     button {
       position: relative;
       right: 65px;
@@ -38,9 +38,9 @@
 @media (max-width: $breakpoint_smallTablet) {
   .input {
     flex-direction: column;
-    gap: 1.5rem;
     align-items: flex-start;
     justify-content: center;
+    gap: 1.5rem;
     .field {
       width: 100%;
       button {

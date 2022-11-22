@@ -1,12 +1,10 @@
+@use "../../styles/mixin";
 @import "../../styles/responsive";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include mixin.flex_col_c_s();
+
   h1 {
-    font-size: 3.4rem;
-    color: #292929;
     margin-bottom: 2.5rem;
     text-align: center;
   }
@@ -22,7 +20,6 @@
 .parag {
   h2 {
     font-size: 2rem;
-    color: #292929;
     margin-bottom: 1.2rem;
   }
 }
