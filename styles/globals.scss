@@ -1,9 +1,26 @@
-@import "./variables";
-html,
-body {
+@use "./variables";
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  color: $fontColor;
+  line-height: normal;
+
+  button {
+    span {
+      font-weight: 300;
+    }
+  }
+  h1 {
+    font-size: 3.4rem;
+  }
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: variables.$fontColor;
 }
 
 a {
@@ -11,31 +28,9 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  line-height: normal;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  button {
-    span {
-      font-weight: 300;
-    }
-  }
-}
-
 .MuiTextField-root {
   input {
     font-size: 2rem;
     color: #292929;
   }
-}
-
-.MuiMobileStepper-dotActive {
-  width: 3rem;
-}
-
-.MuiMobileStepper-dot {
-  color: black;
 }

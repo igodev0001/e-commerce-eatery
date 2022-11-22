@@ -14,6 +14,12 @@
 @mixin flex_column() {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin flex_col_c_s() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
